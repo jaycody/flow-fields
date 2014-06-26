@@ -50,27 +50,25 @@ Dan [Shiffman]
 >
 
 ```text
-As always, I greatly appreciate your willingness to so quickly and thoroughly respond to what must be an unending flow of programming related questions.
+As always, I greatly appreciate your willingness to so quickly and thoroughly respond to what must be an unending flow of programming related questions.  
 
-New developments in my paradigm, projects, and programming skills have lead to this email. Writing you has helped me flush out some new ideas, some of which I was not aware of until I reread what I had written you. In this respect, some of what’s written here was just a thought exercise that I’ve left for you to read at your discretion.
+New developments in my paradigm, projects, and programming skills have lead to this email. Writing you has helped me flush out some new ideas, some of which I was not aware of until I reread what I had written you. In this respect, some of what’s written here was just a thought exercise that I’ve left for you to read at your discretion.  
 
-And congratulations on your recent recognition as super bad ass teacher.
+And congratulations on your recent recognition as super bad ass teacher.  
 
-re: emergent / recursive Flow Fields
-
-[short version]
+re: emergent / recursive Flow Fields  [short version]
 
 my setup:
-1) flow field informs particles that are projected onto massage table. (field informed by depth, movement, light, etc)
-2) separate computer/kinect provides video goggle image that the client sees of themselves on the massage table. (particles for this image derived from viewed pixel information. Flow field informed by depth, movement, light as well). Discovery: image viewed in goggles can be modulated with patterns of light reflected off the client, patterns which are themselves informed by the first flow field. Thus, one flow field modulates another flow field.
+flow field informs particles that are projected onto massage table. (field informed by depth, movement, light, etc)
+separate computer/kinect provides video goggle image that the client sees of themselves on the massage table. (particles for this image derived from viewed pixel information. Flow field informed by depth, movement, light as well). Discovery: image viewed in goggles can be modulated with patterns of light reflected off the client, patterns which are themselves informed by the first flow field. Thus, one flow field modulates another flow field.
 
 Naturally, my mind was drawn into the singularity of flow field feedback loops.
 
 I’m interested in:
 
-a) feedback loops and recursion in flow fields (as opposed to video feedback loops represented as a flow field). Does it even make sense to talk about Flow Fields that call themselves? Or flow fields that reflect each other? If so, what about runaway feedback loops in fields derived from motion and light but expressed as depth?
+feedback loops and recursion in flow fields (as opposed to video feedback loops represented as a flow field). Does it even make sense to talk about Flow Fields that call themselves? Or flow fields that reflect each other? If so, what about runaway feedback loops in fields derived from motion and light but expressed as depth?
 
-b) life-like and seemingly improvisational behavior between vectors in a flow field and between multiple flow fields in a system, which are themselves informed by diverse information sources. (eg, depth and light flow fields combine to form an emergent single field where particles move down an elevation gradient but up an illumination gradient, such that bright spots create mountains or valleys by amplifying current topography, etc etct).
+life-like and seemingly improvisational behavior between vectors in a flow field and between multiple flow fields in a system, which are themselves informed by diverse information sources. (eg, depth and light flow fields combine to form an emergent single field where particles move down an elevation gradient but up an illumination gradient, such that bright spots create mountains or valleys by amplifying current topography, etc etct).
 
 respectfully,
 
