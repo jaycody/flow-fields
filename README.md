@@ -81,7 +81,8 @@ I just saw the Starry Night flow field. I imagine something similar for the mass
 
 pps.[even more details]
 
-I’m wanting to explore emergent flow patterns between flow fields that are aware of, and capable of responding to, other flow fields. Mirror neurons in flow patterns that allow entire flow fields to be recreated inside a flow field?
+I’m wanting to explore emergent flow patterns between flow fields that are aware of, and capable of responding to, 
+other flow fields. Mirror neurons in flow patterns that allow entire flow fields to be recreated inside a flow field?
 
 Recursive FlowFields? (eg Recursive FlowField get(piece of yourself, apply (add / subtract that piece to yourself). let the new Vectors determine the movement of this new piece of yourself through yourself, while you retain original vectors such that sufficient continuity remains betweens the hierarchies without falling into reptition or dropping off into random()). I see how I can create a feedback loop with video cameras and convert this into a flow field, but visible light has the luxury of being visible. Projecting the depthImage onto the massage table was kinda of like looking into a mirror and not seeing a reflection, the otherwise infinite video feedback loop stopped even though a camera informed the projected light. I could use an RGB camera to see the depthImage, but this wouldn’t be a feedback loop based on depth, it would be based on a visible representation of depth. How do I remain inside the realm of a particular form of information to produce the emergent organic patterns found in analog video feedback? I guess that’s exactly what flocking behaviors are, actually. Situational/behavioral based feedback loops expressed as emergent group dynamics. Creating life-like and seemingly improvisational behaviors in flow fields? Every vector aware of every other vector? such that a change changes the internal state, and subsequent behavior of, all the others agents. What does flocking look like if change of location is not an option?
 
@@ -89,6 +90,6 @@ Any and all feedback or pointers to related info would be greatly appreciated:
 
 respectfully,
 
-jason stephens
+jason stephens   
 ```
 
