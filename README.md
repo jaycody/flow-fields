@@ -75,6 +75,9 @@ b) life-like and seemingly improvisational behavior between vectors in a flow fi
 respectfully,
 
 jason stephens
+```
+
+```text
 
 ps.[more details, if you'd like]
 I just saw the Starry Night flow field. I imagine something similar for the massage client using video goggles to see a bright light on their chest that resembles the moon in the Starry Night flow field. The light comes from a swarm of bright particles that are actually projected onto the client from the video projector. These particles circle around the highest plateaus of the client’s body via a depth informed flow field. Pixel info from the image, as seen by the client in the video goggle view, is then used as the particle system (Starry Night style). Meahwhile, a secondary kinect / computer creates a depth/light informed flow field to control the new particle system made up of, and visible to, the client, such that bright pixels are extruded into z dimension above the client’s body. What would start out as bright light projected onto the client in the form of, say, a white ellipse with a radial gradient, would, for the client, look like a sphere, textured with the client’s image, extending into the space beyond the client’s bodily borders at a distance relative to the radial gradient of the projected ellipse.
