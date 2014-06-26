@@ -51,7 +51,8 @@ Dan [Shiffman]
 >
 
 ```text
-As always, I greatly appreciate your willingness to so quickly and thoroughly respond to what must be an unending flow of programming related questions.  
+As always, I greatly appreciate your willingness to so quickly and thoroughly respond to what must be an unending flow
+of programming related questions.  
 
 New developments in my paradigm, projects, and programming skills have lead to this email. Writing you has helped me flush out some new ideas, some of which I was not aware of until I reread what I had written you. In this respect, some of what’s written here was just a thought exercise that I’ve left for you to read at your discretion.  
 
