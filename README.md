@@ -23,6 +23,11 @@ ________________
 - Lattice Gasses 
 - Reaction-Diffusion Systems
 
+####Examples:
+- [Starry Night (animation)](https://www.youtube.com/watch?v=Bm9YvhBUmc4)
+  - "A try to visualize the flow of the famous painting 'Starry Night' of Vincent Van Gogh."
+  - sound responds to flow
+  - openframeworks.
 ________________________
 
 ###Exchange with Shiffman re Flow Fields:
