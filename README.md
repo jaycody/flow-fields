@@ -4,7 +4,7 @@ steering forces from the grid
 ________________
 
 ####References:
-- [Flow Fields, Feedback Loops, and Memory Allocation (or, How I Learned to Love The Starry Dynamo in the Machinery of Night)](http://itp.nyu.edu/~js5346/jayblog/2012/04/27/flow-fields-feedback-loops-and-memory-allocation-or-how-i-learned-to-love-the-starry-dynamo-in-the-machinery-of-night/) - my blog post about flow field possibilities
+- [Flow Fields, Feedback Loops, and Memory Allocation (or, How I Learned to Love The Starry Dynamo in the Machinery of Night)](http://itp.nyu.edu/~js5346/jayblog/2012/04/27/flow-fields-feedback-loops-and-memory-allocation-or-how-i-learned-to-love-the-starry-dynamo-in-the-machinery-of-night/) - blog post about flow field possibilities
 
 ####Types of Fields
 - gravity
