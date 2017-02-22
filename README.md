@@ -1,5 +1,5 @@
 ###Flow Fields
-steering forces from the grid
+steering forces from the vector grid
 
 ________________
 
