@@ -14,13 +14,13 @@ class Vehicle {
   float maxforce;    // Maximum steering force
   float maxspeed;    // Maximum speed
 
-    Vehicle(PVector l, float ms, float mf) {
+  Vehicle(PVector l, float ms, float mf) {
     position = l.get();
-    r = 3.0;
+    r = 4.0;
     maxspeed = ms;
     maxforce = mf;
-    acceleration = new PVector(0,0);
-    velocity = new PVector(0,0);
+    acceleration = new PVector(0, 0);
+    velocity = new PVector(0, 0);
   }
 
   public void run() {
@@ -65,7 +65,7 @@ class Vehicle {
     fill(175);
     stroke(0);
     pushMatrix();
-    translate(position.x,position.y);
+    translate(position.x, position.y);
     rotate(theta);
     beginShape(TRIANGLES);
     vertex(0, -r*2);
