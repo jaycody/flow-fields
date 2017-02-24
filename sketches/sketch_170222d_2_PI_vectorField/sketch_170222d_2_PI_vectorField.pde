@@ -17,7 +17,7 @@
  void draw() {
    //background(255);
    
-   //grid.display();
+   grid.display();
    
  }
  

@@ -4,6 +4,8 @@ class FlowField {
   int cols;
   int rows;
   int resolution;
+  
+  float arrowsize = 4;
 
 
   FlowField(int r) {
@@ -45,9 +47,20 @@ class FlowField {
 
     for (int i = 0; i < cols; i++) {
       for (int j=0; j<rows; j++) {
-        line(i*resolution, j*resolution, i*resolution + resolution/2, j*resolution+resolution/2);
+        drawVector(field[i][j], i, j);
+        //line(i*resolution, j*resolution, i*resolution + resolution/2, j*resolution+resolution/2);
         //rect(i * resolution, j * resolution, resolution/2, resolution/2);
       }
     }
+  }
+  
+  void drawVector(PVector v, int i_, int j_){
+    float x = i_ * resolution;
+    float y = j_ * resolution;
+    pushMatrix();
+    translate(x, y);
+    rotate(v.heading2D());
+    rect(0, 0, resolution, resolution);
+    popMatrix();
   }
 }
