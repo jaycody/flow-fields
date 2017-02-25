@@ -6,7 +6,7 @@
 // Via Reynolds: http://www.red3d.com/cwr/steer/FlowFollow.html
 
 // Using this variable to decide whether to draw all the stuff
-boolean debug = false;
+boolean debug = true;
 
 PImage img;
 

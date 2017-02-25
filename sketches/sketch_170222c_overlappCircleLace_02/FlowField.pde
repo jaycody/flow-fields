@@ -41,10 +41,11 @@ class FlowField {
   }
 
   void display() {
-
+    init();
+    
     for (int i = 0; i < cols; i++) {
       for (int j=0; j<rows; j++) {
-        line(i*resolution, j*resolution, i*resolution + resolution/2, j*resolution+resolution/2);
+        //line(i*resolution, j*resolution, i*resolution + resolution/2, j*resolution+resolution/2);
         //rect(i * resolution, j * resolution, resolution/2, resolution/2);
       }
     }

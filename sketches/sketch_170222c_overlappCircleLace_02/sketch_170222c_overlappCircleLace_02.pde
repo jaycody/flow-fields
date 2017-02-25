@@ -7,21 +7,21 @@
  
  void setup() {
    size(1024,768);
-   rectMode(CENTER);
    //size(640, 480);
    //background(0);
-   grid = new FlowField(45);
+   grid = new FlowField(35);
  }
  
  
  
  void draw() {
-   //background(0);
+   //background(255);
    
-   grid.display();
+   //grid.display();
    
-   fill(255,15);
-   rect(width/2, height/2, width, height);
+   //fill(255,30);
+   //rect(0,0,width,height);
+   
  }
  
  

@@ -7,7 +7,7 @@
  
  void setup() {
    size(1024,768);
-   rectMode(CENTER);
+   //rectMode(CENTER);
    //size(640, 480);
    //background(0);
    grid = new FlowField(45);
@@ -20,8 +20,9 @@
    
    grid.display();
    
-   fill(255,15);
-   rect(width/2, height/2, width, height);
+   fill(255,50);
+   rect(0,0,width,height);
+   //rect(width/2, height/2, width, height);
  }
  
  

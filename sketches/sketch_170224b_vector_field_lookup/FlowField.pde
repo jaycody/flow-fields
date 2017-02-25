@@ -7,7 +7,7 @@ class FlowField {
 
   float arrowsize = 4;
   float grow = 0.0;
-  float speed = .00001;
+  float speed = .51;
 
   FlowField(int r) {
     resolution =  r;
@@ -56,6 +56,7 @@ class FlowField {
   }
 
   void drawVector(PVector v, int i_, int j_) {
+    speed = map(mouseX,0,width,.00001,1);
     float x = i_ * resolution;
     float y = j_ * resolution;
     //////////
@@ -71,9 +72,14 @@ class FlowField {
     pushMatrix();
     translate(x, y);
     //rotate(v.heading2D());
-    rotate(grow);
+    rotate(grow*sin(theta));
+    
+    //rect(0, 0, (resolution*theta+radius*2+resolution)/cos(theta), (resolution*theta+radius*2+resolution)/sin(theta));
+    
+    rect(0, 0, resolution*theta+radius*2+(resolution*cos(theta)), resolution*theta+radius*2+(resolution*sin(theta)));
+    
     rect(0, 0, resolution*theta+radius*2+resolution, resolution*theta+radius*2+resolution);
-    rect(0, 0, 60*v.x+radius*theta, 60*v.y+radius);
+    //rect(0, 0, 60*v.x+radius*theta, 60*v.y+radius);
     
     //ellipse(0,0, theta*25, theta*25);
     
