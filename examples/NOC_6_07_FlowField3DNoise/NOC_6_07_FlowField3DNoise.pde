@@ -31,6 +31,7 @@ void draw() {
   // Display the flowfield in "debug" mode
   if (debug) flowfield.display();
   // Tell all the vehicles to follow the flow field
+
   for (Vehicle v : vehicles) {
     v.follow(flowfield);
     v.run();
@@ -38,7 +39,7 @@ void draw() {
 
   // Instructions
   fill(0);
-  text("Hit space bar to toggle debugging lines.\nClick the mouse to generate a new flow field.",10,height-20);
+  text("Hit space bar to toggle debugging lines.\nClick the mouse to generate a new flow field.", 10, height-20);
 }
 
 
