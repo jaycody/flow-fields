@@ -44,8 +44,8 @@ int SCREEN_NUM = 2;
 
 //////////////////////////////////////////////////////////
 void setup() {
-  fullScreen(P3D, SCREEN_NUM);
-  //size(1024, 768, P3D);
+  //fullScreen(P3D, SCREEN_NUM);
+  size(1024, 768, P3D);
   noStroke();
   kinect = new Kinect(this);
   kinect.initDepth();
