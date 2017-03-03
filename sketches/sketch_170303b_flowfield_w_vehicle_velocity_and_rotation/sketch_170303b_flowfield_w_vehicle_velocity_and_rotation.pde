@@ -30,7 +30,7 @@ boolean showField    = true;
 int fieldSwitch;
 
 ArrayList<Vehicle>   vehicles;
-int totalVehicles    = 1000;
+int totalVehicles    = 50;
 boolean alignToField = true;
 
 ArrayList<Cell>      cells;
@@ -41,6 +41,7 @@ int totalCells       = 2000;
 
 void setup() {
   size(1024, 768); 
+  rectMode(CENTER);
   initialize();
 }
 

@@ -29,7 +29,7 @@ void switchFields() {
       v.borders();
       v.display();
     }
-    //fadeEffect(0, 20);
+    fadeEffect(0, 10, true);
     break;
   
   /////// Display Ref Image Field ///////////////
@@ -56,7 +56,7 @@ void switchFields() {
       v.borders();
       v.display();
     }
-    fadeEffect(0,10);
+    fadeEffect(255,5, true);
     break;
     
   ///////// CELLS in RefImageField ///////////////////
@@ -88,7 +88,8 @@ void switchFields() {
   //rect(0, 0, width, height);
 }
 
-void fadeEffect(int fillColor, int alpha){
+void fadeEffect(int fillColor, int alpha, boolean isCenter){
   fill(fillColor, alpha);
-  rect(0, 0, width, height);
+  if (isCenter) rect(width/2, height/2, width, height);
+  else rect(0, 0, width, height);
 }

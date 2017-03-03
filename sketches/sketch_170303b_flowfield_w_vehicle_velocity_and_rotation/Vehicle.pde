@@ -27,17 +27,17 @@ class Vehicle {
     loc         = new PVector(random(width), random(height));
     vel         = new PVector(0, 0);
     acc         = new PVector(0, 0);
-    size        = new PVector(gridResolution, gridResolution); 
+    size        = new PVector(gridResolution*(random(1,4)), gridResolution*(random(1,4))); 
 
     currentHeading     = loc.heading2D();          // initialize heading via location
     alignVehicle       = align_;
     
-    maxspeed           = random(2.0, 5.0); //2, 5
-    maxforce           = random(.1, .5); //.1, .5
+    maxspeed           = random(1, 2); //2, 5
+    maxforce           = random(.1, .3); //.1, .5
 
     refColor    = color(255, 0, 0);
     strokeColor = color(255, 0, 0);
-    alpha       = random(15,45);
+    alpha       = random(5,15);
   }
 
   /////////////////////////////////////////////////////////////////////
@@ -83,7 +83,7 @@ class Vehicle {
     float desiredHeading = desiredAlignment.heading2D();
 
     // scale to maxspeed
-    desiredHeading *= maxspeed*.0001;
+    desiredHeading *= maxspeed*.00001;
 
     // calculate steering force
     float alignmentForce = desiredHeading - currentHeading;
@@ -104,8 +104,8 @@ class Vehicle {
     rotVel += rotAcc;
     
     // limit velocity
-    if (rotVel > .1) rotVel = .1;
-    if (rotVel < -.1) rotVel = -.1;
+    if (rotVel > 1) rotVel = 1;
+    if (rotVel < -1) rotVel = -1;
    
     // update current heading
     currentHeading += rotVel;
@@ -135,14 +135,15 @@ class Vehicle {
   void display() {
     //heading = vel.heading2D();
 
-    fill(refColor, alpha);
-    stroke(refColor, 255);
+    fill(refColor, alpha*0);
+    stroke(refColor, alpha*6);
 
     pushMatrix();
     translate(loc.x, loc.y);
     rotate(currentHeading);
     //rect(0, 0, (size.x*(cos(theta))*1.5), (size.y*(sin(theta)))*1.5);
     rect(0, 0, size.x, size.y);
+    //point(0,0);
     popMatrix();
   }
 
