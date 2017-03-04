@@ -83,7 +83,7 @@ class Vehicle {
     float desiredHeading = desiredAlignment.heading2D();
 
     // scale to maxspeed
-    desiredHeading *= maxspeed*.00001;
+    //desiredHeading *= maxspeed*.01;
 
     // calculate steering force
     float alignmentForce = desiredHeading - currentHeading;
@@ -100,18 +100,25 @@ class Vehicle {
   }
 
   void updateHeading() {
-    // update velocity
+    
+    // velocity updates heading
+    currentHeading += rotVel;
+    
+    // angular acceleration updates velocity
     rotVel += rotAcc;
     
     // limit velocity
-    if (rotVel > 1) rotVel = 1;
-    if (rotVel < -1) rotVel = -1;
+    //if (rotVel > .05) rotVel = .05;
+    //if (rotVel < -.05) rotVel = -.05;
+    
+    // constrain velocity rather than limit
+    rotVel = constrain(rotVel, -.05, .05);
    
     // update current heading
-    currentHeading += rotVel;
+    //currentHeading += rotVel;
     // clear acceleration
     rotAcc = 0;
-    //rotVel = 0;
+    
   }
   ////////////// END ALIGN TO VECTOR FIELD
   ///////////////////////////////////////////////////////////////////////

@@ -6,14 +6,21 @@
  - FlowField overload constructor when using reference image
  
  todo:
+ - [x] add particle
+ - [ ] particle system
+ - [ ] vehicles and cells extend particle
+ - [ ] add kinect
+ - [ ] array of forces at lookup
+ - [ ] Particle system for vehicles
+ - [ ] Cell extends Vehicle?
  - [x] use the color variable when extracting pixel data for ref image
  - [x] Use a 3D vector to track x,y,z noise values
  - [x] flowfield: cell vector mapped to brightness of ref image
  - [] flowfield: cell vector points to brightness neighbor cell
- - [] Vehicle movement according to lookup field for ref image
+ - [x] Vehicle movement according to lookup field for ref image
  - [] Vehicle movement toward brightest of surrounding pixels
  - [] Use video/depth for reference image
- - [] update vehicle class for reynolds behaviors (applyForce method, etc)
+ - [x] update vehicle class for reynolds behaviors (applyForce method, etc)
  - [] FlowFieldSystem class that combines the field sources into lookup table of PVector array at each cell
  - a 2D array of arrays. not sure how that looks. 
  - ArrayList[][] allFields = new ArrayList[cols][rows] ?? something like that
@@ -21,13 +28,17 @@
  - [] Inheritance optimization (eg Cell inherits Vehicle), FlowFieldDepth inherits FlowField
  */
 
+import java.util.*;
 ////////// GLOBALS ///////////////
 FlowField            grid;
 FlowField            refImageGrid;
 PImage refImg;
 int gridResolution   = 25;
 boolean showField    = true;
+boolean switchField  = false;
 int fieldSwitch;
+
+Particle             particle;
 
 ArrayList<Vehicle>   vehicles;
 int totalVehicles    = 50;
@@ -41,18 +52,32 @@ int totalCells       = 2000;
 
 void setup() {
   size(1024, 768); 
-  rectMode(CENTER);
+  //rectMode(CENTER);
   initialize();
 }
 
 void draw() {
-  switchFields();
+  if(switchField) switchFields();
+
+  particle.run();
+  if (particle.isDead()) {
+    particle = new Particle(new PVector(random(width), random(height*.3)));
+  }
+  if (mousePressed){
+    particle = new Particle(new PVector(random(width), random(height*.3)));
+  }
+  
 }
 
 
 //////// INITIAL SETUP ///////////////////
 void initialize() {
+  smooth();
   refImg = loadImage("../../images/31.jpg");
+
+  particle = new Particle(new PVector(random(width), random(height*.3)));
+
+
 
   //// Initialize Fields
   grid = new FlowField(gridResolution);

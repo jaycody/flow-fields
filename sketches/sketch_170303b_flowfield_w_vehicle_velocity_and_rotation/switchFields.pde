@@ -56,7 +56,7 @@ void switchFields() {
       v.borders();
       v.display();
     }
-    fadeEffect(255,5, true);
+    //fadeEffect(255,5, true);
     break;
     
   ///////// CELLS in RefImageField ///////////////////
