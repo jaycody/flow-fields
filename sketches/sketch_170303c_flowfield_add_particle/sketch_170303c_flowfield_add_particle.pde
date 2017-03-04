@@ -35,7 +35,7 @@ FlowField            refImageGrid;
 PImage refImg;
 int gridResolution   = 25;
 boolean showField    = true;
-boolean switchField  = true;
+boolean switchField  = false;
 int fieldSwitch;
 
 Particle             particle;
@@ -59,7 +59,7 @@ void setup() {
 void draw() {
   if(switchField) switchFields();
 
-  /*
+  
   particle.run();
   if (particle.isDead()) {
     particle = new Particle(new PVector(random(width), random(height*.3)));
@@ -67,7 +67,7 @@ void draw() {
   if (mousePressed){
     particle = new Particle(new PVector(random(width), random(height*.3)));
   }
-  */
+  
   
 }
 
