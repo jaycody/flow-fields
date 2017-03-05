@@ -14,7 +14,7 @@ class Particle {
     velocity     = new PVector(random(-1, 1), -1);
     acceleration = new PVector(0, random(.01, .1));
 
-    lifespan    = 255;
+    lifespan     = random(50,355);
   }
 
   void run() {

@@ -39,6 +39,8 @@ boolean switchField  = false;
 int fieldSwitch;
 
 Particle             particle;
+ArrayList<Particle>  particles;
+int totalParticles   = 100;
 
 ArrayList<Vehicle>   vehicles;
 int totalVehicles    = 50;
@@ -60,6 +62,17 @@ void draw() {
   if(switchField) switchFields();
 
   
+  for (int i = particles.size()-1; i > 0; i--){
+    Particle p = particles.get(i);
+    p.run();
+    if (p.isDead()){
+      //particles.remove(i);
+      p = new Particle(new PVector(random(width), random(height*.3)));
+      particles.remove(i);
+      particles.add(p);
+    }
+  }
+  
   particle.run();
   if (particle.isDead()) {
     particle = new Particle(new PVector(random(width), random(height*.3)));
@@ -78,8 +91,10 @@ void initialize() {
   refImg = loadImage("../../images/31.jpg");
 
   particle = new Particle(new PVector(random(width), random(height*.3)));
-
-
+  particles = new ArrayList<Particle>();
+  for (int i = 0; i < totalParticles; i++) {
+   particles.add(new Particle(new PVector(random(width), random(height*.5)))); 
+  }
 
   //// Initialize Fields
   grid = new FlowField(gridResolution);
