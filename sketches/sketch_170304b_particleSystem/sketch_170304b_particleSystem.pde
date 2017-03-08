@@ -40,7 +40,10 @@ int fieldSwitch;
 
 Particle             particle;
 ArrayList<Particle>  particles;
-int totalParticles   = 100;
+int totalParticles   = 1000;
+
+
+
 
 ArrayList<Vehicle>   vehicles;
 int totalVehicles    = 50;
@@ -72,7 +75,7 @@ void draw() {
       particles.add(p);
     }
   }  
-fadeEffect(0,20, false);
+fadeEffect(0,10, false);
 }
 
 
