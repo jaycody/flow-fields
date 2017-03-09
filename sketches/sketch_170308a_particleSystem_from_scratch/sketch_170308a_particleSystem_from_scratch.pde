@@ -6,6 +6,8 @@
  [ ] jump to the ParticleSystem class
  */
 
+ParticleSystem ps;
+
 ArrayList<Particle> particles;
 int totalParticles = 300;
 
@@ -16,17 +18,21 @@ void setup() {
   
   mouseLoc = new PVector(mouseX, mouseY);
   
+  ps = new ParticleSystem(300);
+  /*
   particles = new ArrayList<Particle>();
   for (int i = 0; i < totalParticles; i++) {
     particles.add(new Particle(random(width), random(height)));
   }
+  */
 }
 
 
 void draw() {
   mouseLoc.x = mouseX;
   mouseLoc.y = mouseY;
-  
+  ps.run();
+  /*
   for (int i = particles.size()-1; i > 0; i--){
     Particle p = particles.get(i);
     p.update();
@@ -35,6 +41,7 @@ void draw() {
       particles.remove(p);
       particles.add(new Particle(mouseLoc.x + random(-5,5), mouseLoc.y + random(-5,5)));
       //particles.add(new Particle(random(width), random(height)));
-    } 
+    }
   }
+  */
 }
