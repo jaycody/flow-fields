@@ -25,13 +25,12 @@ class Particle {
     vel.add(acc);
     
     lifespan -= 2;
-    
   }
+  
   void display() { 
     fill(fillColor, lifespan);
     stroke(fillColor, lifespan);
     ellipse(loc.x, loc.y, 20, 20);
-    //point(loc.x, loc.y);
   }
 
   boolean isDead() {

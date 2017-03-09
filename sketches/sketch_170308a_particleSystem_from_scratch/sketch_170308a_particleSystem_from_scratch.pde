@@ -24,7 +24,6 @@ void setup() {
 
 
 void draw() {
-  //background(150);
   mouseLoc.x = mouseX;
   mouseLoc.y = mouseY;
   
