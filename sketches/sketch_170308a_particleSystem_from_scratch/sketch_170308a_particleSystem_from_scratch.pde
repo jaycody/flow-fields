@@ -16,6 +16,20 @@ void setup() {
   for (int i = 0; i < totalParticles; i++) {
     particles.add(new Particle(random(width), random(height)));
   }
+  
+  println(particles.size());
+  
+  for (int i = particles.size()-1; i > 0; i--){
+    println(particles.size());
+    Particle p = particles.get(i);
+    p.display();
+  }
+  /*
+  for (Particle p: particles){
+    p.display();
+  }
+  */
+  
 }
 
 
@@ -23,11 +37,13 @@ void draw() {
   ellipse(10, 10, 10, 19);
   particle.display();
 
+/*
   for (int i = particles.size()-1; i > 0; i--){
-    particles[i].display();
+    particles.display();
     if (particles[i].isDead()){
       particles.remove(particles[i]);
      // particles.add(new Particle(random(width), random(height)));
     } 
   }
+  */
 }
