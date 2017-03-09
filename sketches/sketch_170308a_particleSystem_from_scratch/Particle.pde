@@ -3,17 +3,35 @@
 
 
 class Particle {
+  
   PVector loc;
-  float   lifespan = 255;
+  PVector vel;
+  PVector acc;
+  
+  float   lifespan;
+  color   fillColor;
   
   Particle(float x_, float y_) {
-    loc = new PVector(x_, y_);
+    loc   = new PVector(x_, y_);
+    vel   = new PVector(random(-1,1), -1);
+    acc   = new PVector(0, .2);
+    
+    lifespan  = random(150,255);
+    fillColor = color (random(0,255));
   }
 
+  void update() {
+    loc.add(vel);
+    vel.add(acc);
+    
+    lifespan -= 2;
+    
+  }
   void display() { 
-    fill(255, lifespan);
+    fill(fillColor, lifespan);
+    stroke(fillColor, lifespan);
     ellipse(loc.x, loc.y, 20, 20);
-    lifespan -= 1;
+    //point(loc.x, loc.y);
   }
 
   boolean isDead() {
