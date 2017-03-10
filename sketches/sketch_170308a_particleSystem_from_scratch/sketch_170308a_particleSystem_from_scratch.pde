@@ -2,8 +2,9 @@
  ParticleSystem gongfu 
  
  NEXT:
- [ ] add vel & acc to particle class
- [ ] jump to the ParticleSystem class
+ [x] add vel & acc to particle class
+ [x] jump to the ParticleSystem class
+ [ ] system of systems
  */
 
 ParticleSystem ps;
