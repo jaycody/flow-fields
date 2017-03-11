@@ -5,6 +5,19 @@
  [x] add vel & acc to particle class
  [x] jump to the ParticleSystem class
  [ ] system of systems
+ [ ] inheritance --> 
+       class Vehichle extends Particle
+       class FeedbackMixer extends Mixer
+ [ ] polymorphism
+ 
+ NOTES:
+ 
+ Inheritance:
+    1. inherit everything
+    2. add data or functionality
+    3. override functions
+    4. super
+  
  */
 
 ParticleSystem ps;
