@@ -33,4 +33,6 @@ void setup() {
 
 void draw() {
   meta.runAllSystems();
+  //fill(0,10);
+  //rect(0,0,width,height);
 }

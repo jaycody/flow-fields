@@ -60,8 +60,8 @@ class ParticleSystem {
     }
   }
   void addNewParticleToSystem() {
-    deviate.x = origin.x + random(-30, 30);
-    deviate.y = origin.y + random(-30, 30); 
+    deviate.x = origin.x + random(-20, 20);
+    deviate.y = origin.y + random(-20, 20); 
 
     // PolyMorphism --> Particles AND Vehicles added to the ArrayList of Particles
     // since pType is constant within each ps, all particles within a ps have same texture

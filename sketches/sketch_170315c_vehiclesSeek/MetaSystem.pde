@@ -13,6 +13,7 @@ class MetaSystem {
   boolean                   applyGravity = false;
 
   PVector                   target;
+  PVector                   targetNoise;
   boolean                   seekTarget   = true;
 
   MetaSystem() {
@@ -27,6 +28,7 @@ class MetaSystem {
     wind         = new PVector();
     gravity      = new PVector(0, 0.04);
     target       = new PVector();
+    targetNoise  = new PVector(random(1000), random(1000));
 
     showInstructions();
     blendMode(ADD);
@@ -44,6 +46,12 @@ class MetaSystem {
     if (seekTarget) {
       target.x = mouseX;
       target.y = mouseY;
+      // add noise to target location
+      target.x += map(noise(targetNoise.x), 0, 1, -200, 200);
+      target.y += map(noise(targetNoise.y), 0, 1, -200, 200);
+     
+      targetNoise.add(0.01, 0.01, 0);
+     
     }
 
     for (int i = metaSystem.size()-1; i >= 0; i--) {
@@ -81,7 +89,7 @@ class MetaSystem {
   }
 
   void addNewParticleSystem(int pTexIndex_) {
-    int totalParticles = int(random(300));
+    int totalParticles = int(random(900, 1000));
     int pType          = 1; //int(random(2)); //0=particle, 1=vehicle
     int pTexIndex      = pTexIndex_;
     origin.x           = mouseX;
