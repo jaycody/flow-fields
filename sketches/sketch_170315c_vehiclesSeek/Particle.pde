@@ -46,8 +46,8 @@ class Particle {
 
   void render(PImage t) {
     imageMode(CENTER);
-    tint(lifespan);
-    image(t, loc.x, loc.y, 30, 30);
+    //tint(lifespan);
+    image(t, loc.x, loc.y, 20, 20);
   }
 
   void display() { 

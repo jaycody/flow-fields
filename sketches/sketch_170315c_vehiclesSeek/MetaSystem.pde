@@ -31,11 +31,11 @@ class MetaSystem {
     targetNoise  = new PVector(random(1000), random(1000));
 
     showInstructions();
-    blendMode(ADD);
+    //blendMode(ADD);
   }
 
   void runAllSystems() {
-    background(0);
+    //background(0);
 
     if (applyWind) {
       float dx = map(mouseX, 0, width, -0.2, 0.2);
@@ -89,7 +89,7 @@ class MetaSystem {
   }
 
   void addNewParticleSystem(int pTexIndex_) {
-    int totalParticles = int(random(900, 1000));
+    int totalParticles = int(random(9000, 10000));
     int pType          = 1; //int(random(2)); //0=particle, 1=vehicle
     int pTexIndex      = pTexIndex_;
     origin.x           = mouseX;
