@@ -5,6 +5,10 @@ tex2 = brightblue
 tex3 = darkblue
 tex4 = yellow
 tex5 = white
+tex6 = corona
+tex7 = emitter
+tex8 = particle
+tex9 = reflection
 */
 
 void mousePressed() {
@@ -26,7 +30,7 @@ void keyPressed() {
   println(i);
   
   // switch screens
-  if (i >= 0 && i < 6) {
+  if (i >= 0 && i < 10) {
     meta.addNewParticleSystem(i);
   }
 }

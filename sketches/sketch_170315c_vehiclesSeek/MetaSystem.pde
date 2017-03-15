@@ -7,18 +7,26 @@ class MetaSystem {
   PImage[]                  pTextures;
 
   PVector                   wind;
-  boolean                   applyWind = true;
+  boolean                   applyWind    = false;
+
+  PVector                   gravity;
+  boolean                   applyGravity = false;
+
+  PVector                   target;
+  boolean                   seekTarget   = true;
 
   MetaSystem() {
     metaSystem   = new ArrayList<ParticleSystem>();
     origin       = new PVector(mouseX, mouseY);
 
-    pTextures    = new PImage[6];
+    pTextures    = new PImage[10];
     for (int i = 0; i < pTextures.length; i++) {
       pTextures[i] = loadImage("tex" + i + ".png");
     }
-    
+
     wind         = new PVector();
+    gravity      = new PVector(0, 0.04);
+    target       = new PVector();
 
     showInstructions();
     blendMode(ADD);
@@ -26,11 +34,16 @@ class MetaSystem {
 
   void runAllSystems() {
     background(0);
-    
+
     if (applyWind) {
       float dx = map(mouseX, 0, width, -0.2, 0.2);
       wind.x = dx;
       wind.y = 0;
+    } 
+
+    if (seekTarget) {
+      target.x = mouseX;
+      target.y = mouseY;
     }
 
     for (int i = metaSystem.size()-1; i >= 0; i--) {
@@ -40,6 +53,17 @@ class MetaSystem {
         ps.applyForce(wind);
       }
 
+      if (applyGravity) {
+        ps.applyForce(gravity);
+      }
+      
+      // if seek behavior isON
+      //  then ask each ps if their particles canSeek
+      if (seekTarget) {
+        if (ps.canSeek()) {
+          ps.seek(target);
+        }
+      }
       ps.run();
 
       removeIfEmpty(ps, i);
@@ -58,7 +82,7 @@ class MetaSystem {
 
   void addNewParticleSystem(int pTexIndex_) {
     int totalParticles = int(random(300));
-    int pType          = int(random(2));
+    int pType          = 1; //int(random(2)); //0=particle, 1=vehicle
     int pTexIndex      = pTexIndex_;
     origin.x           = mouseX;
     origin.y           = mouseY;

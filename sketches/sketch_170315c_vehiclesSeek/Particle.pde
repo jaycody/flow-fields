@@ -1,25 +1,23 @@
 
 class Particle {
-  // shared by all Particle ancestors
-  PVector   loc;
-  PImage    pTex;
-  
-  // unique to particle class
-  PVector   vel;
-  PVector   acc;
-  
-  float     lifespan;
-  color     fillColor;
 
+  PVector loc;
+  PVector vel;
+  PVector acc;
+
+  PImage  pTex;
+
+  float   lifespan;
+  color   fillColor;
 
   Particle(PVector birthPlace_, PImage pTex_) {
-    // super() from Vehicle will call these first two
+
     loc   = birthPlace_.get();
-    pTex  = pTex_;
     vel   = new PVector(random(-1, 1), -3);
     acc   = new PVector(0, .1);
 
-    
+    pTex  = pTex_;
+
     lifespan  = random(150, 255);
     fillColor = color (random(0, 255));
   }
@@ -30,22 +28,26 @@ class Particle {
     //display();
   }
 
-  void applyForce(PVector f) {
-   acc.add(f); 
-    
-  }
   void update() {
     vel.add(acc);
     loc.add(vel);
-    
-    lifespan -= 2;
+
+    lifespan -= 1;
     acc.mult(0);
+  }
+
+  void applyForce(PVector f) {
+    acc.add(f);
+  }
+
+  // send it off to the vehicle
+  void seek(PVector target) {
   }
 
   void render(PImage t) {
     imageMode(CENTER);
-    //tint(lifespan);
-    image(t, loc.x, loc.y);
+    tint(lifespan);
+    image(t, loc.x, loc.y, 30, 30);
   }
 
   void display() { 

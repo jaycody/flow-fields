@@ -2,15 +2,16 @@
  ParticleSystem gongfu 
  
  NEXT:
- [ ] add isEmpty() to check particle system similar to isDead() checks a particle
+ [ ] add vehicle behavior SEEK (steering force = desired - current
+ [ ] reduce the size of the new particle images and remove size contraints from  image(t, loc.x, loc.y, 30, 30);
+ [x] add isEmpty() to check particle system similar to isDead() checks a particle
  [x] add vel & acc to particle class
  [x] jump to the ParticleSystem class
  [x] ArrayList of systems of systems
  [x] MultiVerse class
- [ ] inheritance --> 
- class Vehichle extends Particle
- class FeedbackMixer extends Mixer
- [ ] polymorphism
+ [x] inheritance --> 
+ [x] class Vehichle extends Particle
+ [x] polymorphism
  
  NOTES:
  

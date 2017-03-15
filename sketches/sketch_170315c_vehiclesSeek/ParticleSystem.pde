@@ -18,7 +18,6 @@ class ParticleSystem {
     deviate      = new PVector();
 
     pTextures    = pTextures_;
-    //pTextures[0] = pTex_;
     pType        = pType_;
     pTexIndex    = pTexIndex_;
 
@@ -49,24 +48,39 @@ class ParticleSystem {
     }
   }
 
+  void seek(PVector target) {
+    for (Particle p : particles) {
+      p.seek(target);
+    }
+  }
+
   void applyForce(PVector dir) {
     for (Particle p : particles) {
       p.applyForce(dir);
     }
   }
   void addNewParticleToSystem() {
-    deviate.x = origin.x + random(-25, 25);
-    deviate.y = origin.y + random(-25, 25); 
+    deviate.x = origin.x + random(-30, 30);
+    deviate.y = origin.y + random(-30, 30); 
 
     // PolyMorphism --> Particles AND Vehicles added to the ArrayList of Particles
     // since pType is constant within each ps, all particles within a ps have same texture
     if (pType == 0) particles.add(new Particle(deviate, pTextures[pTexIndex]));
-    if (pType == 1) particles.add(new Vehicle(deviate, pTextures[pTexIndex], random(2, 5), random(1, 2)));
+    if (pType == 1) particles.add(new Vehicle(deviate, pTextures[pTexIndex], random(3, 9), random(.05, .1)));
   }
 
   // test whether the system is empty
   boolean isEmpty() {
     if (particles.size() <= 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // are we a ps of with reynolds behavior? or just a bunch of lifeless particles?
+  boolean canSeek() {
+    if (pType == 1) {
       return true;
     } else {
       return false;
