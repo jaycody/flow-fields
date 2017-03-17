@@ -17,7 +17,7 @@ class Vehicle extends Particle {
 
   // inherit run
 
-  // modify update
+  // override particle update
   void update() {
     vel.add(acc);
     vel.limit(ms);      // limit velocity by max speed
@@ -26,6 +26,7 @@ class Vehicle extends Particle {
     lifespan -= .5;
   }
   
+  // override particle seek
   void seek(PVector target) {
     PVector desired = PVector.sub(target, loc);
     
@@ -42,7 +43,7 @@ class Vehicle extends Particle {
     
   }
 
-  // override display
+  // override particle display
   void display() {
     fill(255, 0, 0);
     stroke(0);

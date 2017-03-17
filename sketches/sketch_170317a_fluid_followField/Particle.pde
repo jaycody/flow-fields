@@ -16,7 +16,7 @@ class Particle {
     vel   = new PVector(random(-1, 1), -3);
     acc   = new PVector(0, .1);
 
-    pTex  = pTex_;
+    pTex  = pTex_;         // texture passed to particle constructor from PS object
 
     lifespan  = random(150, 255);
     fillColor = color (random(0, 255));
@@ -24,7 +24,7 @@ class Particle {
 
   void run() {
     update();
-    render(pTex);
+    render(pTex);         // texture passed to particle constructor from PS object
     //display();
   }
 
@@ -41,7 +41,7 @@ class Particle {
   }
 
   // send it off to the vehicle
-  void seek(PVector target) {
+  void seek(PVector target) {      // vehicle inherits and updates
   }
 
   void render(PImage t) {

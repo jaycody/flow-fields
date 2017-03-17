@@ -27,7 +27,7 @@
 MetaSystem meta;
 
 void setup() {
-  size(1024, 768, P2D);
+  size(1024, 768, P2D);  // P2D crashing sketch on MacMini
   meta = new MetaSystem();
 }
 
