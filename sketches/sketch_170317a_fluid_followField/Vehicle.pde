@@ -46,8 +46,9 @@ class Vehicle extends Particle {
   // override particle display
   void display() {
     fill(255, 0, 0);
-    stroke(0);
-    rect(loc.x, loc.y, 25, 25);
-    println(mf);
+    stroke(0, 0, 255);
+    strokeWeight(4);
+    point(loc.x, loc.y);
+    //rect(loc.x, loc.y, 25, 25);
   }
 }

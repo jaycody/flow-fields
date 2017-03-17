@@ -24,8 +24,11 @@ class Particle {
 
   void run() {
     update();
-    render(pTex);         // texture passed to particle constructor from PS object
-    //display();
+    if (isMacMini) {
+      display();
+    } else {
+      render(pTex);     // texture passed to particle constructor from PS object
+    }
   }
 
   void update() {
@@ -44,16 +47,18 @@ class Particle {
   void seek(PVector target) {      // vehicle inherits and updates
   }
 
-  void render(PImage t) {
+  void render(PImage t) {    
     imageMode(CENTER);
     //tint(lifespan);
-    image(t, loc.x, loc.y, 20, 20);
+    image(t, loc.x, loc.y);
+    //image(t, loc.x, loc.y, 20, 20);  // <-- OPTIMIZE HERE by updating the actual dimensions of the png
   }
 
   void display() { 
     fill(fillColor, lifespan);
     stroke(fillColor, lifespan);
-    ellipse(loc.x, loc.y, 20, 20);
+    point(loc.x, loc.y);
+    //ellipse(loc.x, loc.y, 20, 20);
   }
 
   boolean isDead() {

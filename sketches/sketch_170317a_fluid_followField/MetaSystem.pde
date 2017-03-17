@@ -49,9 +49,8 @@ class MetaSystem {
       // add noise to target location
       target.x += map(noise(targetNoise.x), 0, 1, -200, 200);
       target.y += map(noise(targetNoise.y), 0, 1, -200, 200);
-     
+
       targetNoise.add(0.01, 0.01, 0);
-     
     }
 
     for (int i = metaSystem.size()-1; i >= 0; i--) {
@@ -64,7 +63,7 @@ class MetaSystem {
       if (applyGravity) {
         ps.applyForce(gravity);
       }
-      
+
       // if seek behavior isON
       //  then ask each ps if their particles canSeek
       if (seekTarget) {
@@ -89,7 +88,14 @@ class MetaSystem {
   }
 
   void addNewParticleSystem(int pTexIndex_) {
-    int totalParticles = int(random(9000, 10000));
+    int totalParticles;
+    // P2D crashes MacMini. The isMacMini helps me switch environments
+    if (isMacMini) {
+      totalParticles = int(random(900, 1000));  // P2D crashes MacMini. Switch to simple config is MacMini
+    } else {
+      totalParticles = int(random(9000, 10000));  // P2D crashes MacMini. Switch to simple config is MacMini
+    }
+
     int pType          = 1; //int(random(2)); //0=particle, 1=vehicle
     int pTexIndex      = pTexIndex_;
     origin.x           = mouseX;
