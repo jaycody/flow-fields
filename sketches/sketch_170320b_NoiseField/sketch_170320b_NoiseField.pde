@@ -19,17 +19,14 @@
  BaseField  basefield;
  NoiseField noisefield;
  
- 
  void setup() {
   size(1024, 768, P3D);
   smooth();
-  //basefield  = new BaseField(128);
-  noisefield = new NoiseField(32);
+  basefield  = new BaseField(32);
+  noisefield = new NoiseField(64);
  }
- 
  
  void draw() {
    //basefield.display();
    noisefield.display();
-   noisefield.init();
  }

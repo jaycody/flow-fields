@@ -14,10 +14,18 @@ class BaseField {
   }
 
   void init() {
+    println("baseField cols=" + cols);
+    println("baseField rows=" + rows);
+    float xoff = 0;
     for (int i = 0; i < cols; i++) {
+      float yoff = 0;
       for (int j = 0; j < rows; j++) {
-        field[i][j] = new PVector(1, 0);
+        float theta = map(noise(xoff, yoff), 0, 1, -TWO_PI, TWO_PI);
+        field[i][j] = PVector.fromAngle(theta);
+        //field[i][j] = new PVector(1, 0);
+        yoff += .1;
       }
+      xoff += .1;
     }
   }
 
