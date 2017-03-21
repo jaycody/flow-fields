@@ -16,15 +16,20 @@
        - etc
  */
  
- BaseField flowfield;
+ BaseField  basefield;
+ NoiseField noisefield;
+ 
  
  void setup() {
-  size(1024, 768, P2D);
+  size(1024, 768, P3D);
   smooth();
-  flowfield = new BaseField(128);
+  //basefield  = new BaseField(128);
+  noisefield = new NoiseField(32);
  }
  
  
  void draw() {
-   flowfield.display();
+   //basefield.display();
+   noisefield.display();
+   noisefield.init();
  }
