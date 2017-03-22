@@ -1,12 +1,12 @@
-###Flow Fields
+### Flow Fields
 <-- steering forces from the vector grid -->
 
 ________________
 
-####References:
+#### References:
 - [Flow Fields, Feedback Loops, and Memory Allocation (or, How I Learned to Love The Starry Dynamo in the Machinery of Night)](http://itp.nyu.edu/~js5346/jayblog/2012/04/27/flow-fields-feedback-loops-and-memory-allocation-or-how-i-learned-to-love-the-starry-dynamo-in-the-machinery-of-night/) - blog post about flow field possibilities
 
-####Types of Fields
+#### Types of Fields
 - gravity
 - flow map
 - closest point
@@ -16,14 +16,14 @@ ________________
 - Recursive??
 - Autonomous, Lifelike, and Improvisational? (with their own 'behavior force'?)
 
-####Keywords:
+#### Keywords:
 - tessellation structures
 - Diffusion-Limited Aggregation of Dendritit Growth
 - Multi-phase fluids
 - Lattice Gasses 
 - Reaction-Diffusion Systems
 
-####Examples:
+#### Examples:
 - [Starry Night (animation)](https://www.youtube.com/watch?v=Bm9YvhBUmc4)
   - "A try to visualize the flow of the famous painting 'Starry Night' of Vincent Van Gogh."
   - sound responds to flow
@@ -31,7 +31,7 @@ ________________
 
 ________________________
 
-###Exchange with Shiffman re Flow Fields:
+### Exchange with Shiffman re Flow Fields:
 - Shiffman's response:
 
 ```text
