@@ -1,39 +1,52 @@
 
 class NoiseField extends BaseField {
 
-  PVector fieldNoise;
-  PVector noiseOff;
+  float zoff;
   
-  PVector[][] field;
-
-
-  NoiseField(int res_) {
-    super(res_);
-    
-    fieldNoise = new PVector(0.0,0.0);
-    noiseOff   = new PVector(.01, .01);
-    
-    field = new PVector[cols][rows];
-    
-    initNoise();
-  
+  NoiseField(int res_, float noiseVel_, float noiseTime_) {
+    super(res_, noiseVel_, noiseTime_);
   }
 
-  void initNoise() {
-    println("initNoise cols=" + cols);
-    println("initNoise rows=" + rows);
+  void initVars() {
+    // initialize time
+    zoff = 0.0;
+  }
+
+  void initField() {
+    println("Initializing NoiseField vectors:");
+    println("\tres=" + res + " cols=" + cols + " rows=" + rows);
+    println("\tnoiseVel(x, y, and time) " + noiseVel);
     noiseSeed((int)random(1138808));
+    float xoff = 0;
     for (int i = 0; i < cols; i++) {
+      float yoff = 0;
       for (int j = 0; j < rows; j++) {
-        float theta = map(noise(fieldNoise.x, fieldNoise.y), 0, 1, -TWO_PI, TWO_PI);
+        float theta = map(noise(xoff, yoff), 0, 1, -TWO_PI, TWO_PI);
         field[i][j] = new PVector(cos(theta), sin(theta));
-        
-        fieldNoise.y += noiseOff.y; 
+        yoff += noiseVel.y;
       }
-      fieldNoise.x += noiseOff.x;
+      xoff += noiseVel.x;
     }
   }
   
+  void display() {
+   update();
+    super.display();
+   
+   
+  }
   
-  
+  void update() {
+    float xoff = 0;
+    for (int i = 0; i < cols; i++) {
+      float yoff = 0;
+      for (int j = 0; j < rows; j++) {
+        float theta = map(noise(xoff, yoff, zoff), 0, 1, -TWO_PI, TWO_PI);
+        field[i][j] = new PVector(cos(theta), sin(theta));
+        yoff += noiseVel.y;
+      }
+      xoff += noiseVel.x;
+    }
+    zoff += noiseVel.z;
+  }
 }

@@ -22,11 +22,9 @@ NoiseField noisefield;
 void setup() {
   size(1024, 768, P3D);
   smooth();
-  //basefield  = new BaseField(32);
-  noisefield = new NoiseField(16);
+  noisefield = new NoiseField(32, 0.1, 0.01);  // resolution, noiseVel, noiseTime
 }
 
 void draw() {
-  //basefield.display();
   noisefield.display();
 }

@@ -4,51 +4,54 @@ class BaseField {
   int cols;
   int rows;
   PVector[][] field;
+  PVector noiseVel;
+  float noiseVelFloat;
 
-  BaseField(int res_) {
+  BaseField(int res_, float noiseVel_, float noiseTime_) {
     res   = res_;
     cols  = width/res;
     rows  = height/res;
     field = new PVector[cols][rows];
-    init();
+    noiseVel = new PVector(noiseVel_, noiseVel_, noiseTime_);
+    noiseVelFloat = noiseVel_;
+    initVars();
+    initField();
   }
 
-  void init() {
-    println("baseField cols=" + cols);
-    println("baseField rows=" + rows);
-    float xoff = 0;
+  void initVars() {
+    // child fields will need their variables initialized prior to initField()
+  }
+
+  void initField() {
+    println("Initializing baseField:");
+    println("\tresolution=" + res + "\n\tcols=" + cols + "\n\trows=" + rows);
     for (int i = 0; i < cols; i++) {
-      float yoff = 0;
       for (int j = 0; j < rows; j++) {
-        float theta = map(noise(xoff, yoff), 0, 1, -TWO_PI, TWO_PI);
-        field[i][j] = PVector.fromAngle(theta);
-        //field[i][j] = new PVector(1, 0);
-        yoff += .1;
+        field[i][j] = new PVector(-1, 0);
       }
-      xoff += .1;
     }
   }
 
   void display() {
     for (int i = 0; i < cols; i++) {
       for (int j = 0; j < rows; j++) { 
-        
+
         float cellVectorScal    = res*.37;
         float arrowSize         = res*.12;
         float cellVectorHeading = field[i][j].heading2D();
         float cellVectorLength  = field[i][j].mag() * cellVectorScal;
-      
+
         pushMatrix();
-        
+
         // draw cell
         translate(res*i, res*j);
         rect(0, 0, res, res);
-        
-        // draw vector arrow
+
+        // draw vector arrow at center of cell 
         translate(res*.5, res*.5);
         rotate(cellVectorHeading);
         line(0, 0, cellVectorLength, 0);
-        
+
         // draw arrow tip
         line(cellVectorLength, 0, cellVectorLength - arrowSize, -arrowSize);
         line(cellVectorLength, 0, cellVectorLength - arrowSize, arrowSize);
