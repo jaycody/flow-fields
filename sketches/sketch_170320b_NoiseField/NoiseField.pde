@@ -2,7 +2,7 @@
 class NoiseField extends BaseField {
 
   float zoff;
-  
+
   NoiseField(int res_, float noiseVel_, float noiseTime_) {
     super(res_, noiseVel_, noiseTime_);
   }
@@ -28,14 +28,12 @@ class NoiseField extends BaseField {
       xoff += noiseVel.x;
     }
   }
-  
+
   void display() {
-   update();
-    super.display();
-   
-   
+    update();
+    if (showField) super.display();
   }
-  
+
   void update() {
     float xoff = 0;
     for (int i = 0; i < cols; i++) {

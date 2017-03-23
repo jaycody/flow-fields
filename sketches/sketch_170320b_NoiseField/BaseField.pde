@@ -60,4 +60,10 @@ class BaseField {
       }
     }
   }
+
+  PVector lookup(PVector lookup) {
+    int col = int(constrain(lookup.x/res, 0, cols-1));
+    int row = int(constrain(lookup.y/res, 0, rows-1));
+    return field[col][row].get();
+  }
 }
