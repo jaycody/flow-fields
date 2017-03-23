@@ -24,16 +24,14 @@ void setup() {
   size(1024, 768, P3D);
   smooth();
   noisefield = new NoiseField(32, 0.05, 0.007);  // resolution, noiseVel, noiseTime
-  
+
   instructions();
 }
 
 void draw() {
   background(255);
   noisefield.display();
-  
 }
-
 
 void keyPressed() {
   if (key == ' ') {
@@ -43,5 +41,5 @@ void keyPressed() {
 }
 
 void instructions() {
- println("\nkey commands:\n\ttoggle field: spacebar"); 
+  println("\nkey commands:\n\ttoggle field: spacebar");
 }
