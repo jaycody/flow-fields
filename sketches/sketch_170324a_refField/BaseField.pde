@@ -6,6 +6,7 @@ class BaseField {
   PVector[][] field;
   PVector noiseVel;
   float noiseVelFloat;
+  float zoff;
 
   BaseField(int res_, float noiseVel_, float noiseTime_) {
     res   = res_;
@@ -14,12 +15,14 @@ class BaseField {
     field = new PVector[cols][rows];
     noiseVel = new PVector(noiseVel_, noiseVel_, noiseTime_);
     noiseVelFloat = noiseVel_;
+    zoff  = 0.0;
     initVars();
     initField();
   }
 
   void initVars() {
     // child fields will need their variables initialized prior to initField()
+    
   }
 
   void initField() {

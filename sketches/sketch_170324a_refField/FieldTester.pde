@@ -10,13 +10,13 @@ class FieldTester {
   }
 
 
-  void test() {
-    update();
+  void test(BaseField field) {
+    update(field);
     display();
   }
 
-  void update() {
-    vFromLookup = noisefield.lookup(fieldTestLoc);
+  void update(BaseField field) {
+    vFromLookup = field.lookup(fieldTestLoc);
     theta       = vFromLookup.heading2D();
   }
 

@@ -1,15 +1,11 @@
 
 class NoiseField extends BaseField {
 
-  float zoff;
-
   NoiseField(int res_, float noiseVel_, float noiseTime_) {
     super(res_, noiseVel_, noiseTime_);
   }
 
   void initVars() {
-    // initialize time
-    zoff = 0.0;
   }
 
   void initField() {
