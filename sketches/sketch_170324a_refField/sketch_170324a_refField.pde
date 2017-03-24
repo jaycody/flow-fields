@@ -18,12 +18,23 @@
 
 BaseField  basefield;
 NoiseField noisefield;
+
 boolean showField = true;
+
+boolean testField = true;
+FieldTester[] testObjects;
+int totalTestObjects = 1000;
 
 void setup() {
   size(1024, 768);
   smooth();
   noisefield = new NoiseField(32, 0.05, 0.007);  // resolution, noiseVel, noiseTime
+
+  //field test init
+  testObjects = new FieldTester[totalTestObjects];
+  for (int i = 0; i < totalTestObjects; i++) {
+    testObjects[i] = new FieldTester();
+  }
 
   instructions();
 }
@@ -31,6 +42,13 @@ void setup() {
 void draw() {
   background(255);
   noisefield.display();
+
+  // field test
+  if (testField) {
+    for (int i = 0; i < testObjects.length; i++) {
+      testObjects[i].test();
+    }
+  }
 }
 
 void keyPressed() {
