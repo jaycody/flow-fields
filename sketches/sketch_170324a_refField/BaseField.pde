@@ -22,7 +22,6 @@ class BaseField {
 
   void initVars() {
     // child fields will need their variables initialized prior to initField()
-    
   }
 
   void initField() {
