@@ -25,9 +25,18 @@ class NoiseField extends BaseField {
     }
   }
 
-  void display() {
+  void run() {
     update();
     if (showField) super.display();
+  }
+
+  void run(FieldTester[] fieldtests) {
+    update();
+    if (showField) super.display();
+
+    for (int i = 0; i < fieldtests.length; i++) {
+      fieldtests[i].test(this);
+    }
   }
 
   void update() {
@@ -43,6 +52,4 @@ class NoiseField extends BaseField {
     }
     zoff += noiseVel.z;
   }
-  
-  // lookup see super
 }
