@@ -1,16 +1,18 @@
 
 class ReferenceField extends NoiseField {
 
-  PImage refImage;
+  PImage[] refImages;
+  
 
-  ReferenceField(int res_, float noiseVel_, float noiseTime_, PImage refImage_) {
+  ReferenceField(int res_, float noiseVel_, float noiseTime_, PImage[] refImages_) {
     super(res_, noiseVel_, noiseTime_);
 
-    refImage = refImage_;
+    refImages = refImages_;
   }
 
   void run() {
     super.run();
-    image(refImage, 100, 100);
+    image(refImages[1], 100, 100);
+    image(refImages[0], 400, 400);
   }
 }

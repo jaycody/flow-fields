@@ -17,7 +17,7 @@
  */
 
 ReferenceField referencefield;
-PImage refImage;
+PImage[] refImages;
 
 boolean showField = true;
 boolean testField = true;
@@ -25,12 +25,15 @@ FieldTester[] fieldtests;
 int totalTestObjects = 100;
 
 void setup() {
-  size(1024, 768);
+  size(1024, 768, P2D);
   smooth();
 
-  //refImage       = loadImage("wavemotion.jpg");
-  refImage       = loadImage("kamehameha.jpg");
-  referencefield = new ReferenceField(64, 0.09, 0.004, refImage);  // resolution, noiseVel, noiseTime
+  refImages      = new PImage[2]; 
+  refImages[0]   = loadImage("wavemotion.jpg");
+  refImages[1]   = loadImage("kamehameha.jpg");
+  
+  
+  referencefield = new ReferenceField(64, 0.09, 0.004, refImages);  // resolution, noiseVel, noiseTime
 
   setup_tests_and_instructions();
 }
