@@ -24,6 +24,8 @@ PImage[] refImages;
 
 MouseField     mouseField;
 
+FlowParticle   flowParticle;
+
 boolean showField = true;
 boolean testField = true;
 FieldTester[] fieldtests;
@@ -39,7 +41,9 @@ void setup() {
   
   // args = resolution, noiseVel, noiseTime, array of ref images
   referencefield = new ReferenceField(64, 0.09, 0.004, refImages); 
-  mouseField     = new MouseField(64, 0.2, 0.005);
+  mouseField     = new MouseField(64, 0.09, 0.003);
+  //PVector tempLoc = new PVector(random(width), random(height));
+  flowParticle = new FlowParticle(new PVector(random(width), random(height)), 9, .1);
   
   setup_tests_and_instructions();
 }
@@ -51,6 +55,8 @@ void draw() {
     //referencefield.run();
   
   mouseField.run();
+  flowParticle.follow(mouseField);
+  flowParticle.run();
   
 }
 
