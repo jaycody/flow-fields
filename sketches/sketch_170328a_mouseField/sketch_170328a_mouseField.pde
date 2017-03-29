@@ -46,13 +46,11 @@ void setup() {
 
 void draw() {
   background(255);
-
   
     //referencefield.run(fieldtests);
     //referencefield.run();
   
-  
-  mouseField.run(fieldtests);
+  mouseField.run();
   
 }
 
