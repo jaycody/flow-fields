@@ -9,22 +9,24 @@ class MouseField extends NoiseField {
     mouseLoc = new PVector();
   }
 
-  /*
-  void testMouseFieldClass() {
-   fill(0,255, 0);
-   ellipse(mouseX, mouseY, 90, 90);
-   }
-   */
 
   void update() {
     super.update(); 
+    mouseLoc.x = mouseX;
+    mouseLoc.y = mouseY;
     for (int i = 0; i < cols; i++) {
       for (int j = 0; j < rows; j++) {
-        fill(0, 255/(i+1), 0);
-        ellipse((i*res)+45, j*res, 90, 90);
+        PVector desired = PVector.sub(mouseLoc, cellLoc[i][j]);
+        desired.setMag(1);
+        field[i][j] = desired;
+        //field[i][j].add(0, -1);
+        //field[i][j].add(0, random(-1,1));
+        //field[i][j] = PVector.sub(mouseLoc, cellLoc[i][j]);
+        stroke(255/(i+1), 0, 0);
+        fill(255-(255/(i+1)), 255/(i+1), 0);
+        //ellipse(cellLoc[i][j].x, cellLoc[i][j].y, res, res);
+        //ellipse(mouseLoc.x, mouseLoc.y, res, res);
       }
     }
-    fill(255,0,0);
-    ellipse(75,75,150,150);
   }
 }

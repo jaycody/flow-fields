@@ -39,7 +39,7 @@ void setup() {
   
   // args = resolution, noiseVel, noiseTime, array of ref images
   referencefield = new ReferenceField(64, 0.09, 0.004, refImages); 
-  mouseField     = new MouseField(128, 0.2, 0.01);
+  mouseField     = new MouseField(32, 0.2, 0.005);
   
   setup_tests_and_instructions();
 }

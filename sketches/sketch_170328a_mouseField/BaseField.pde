@@ -4,15 +4,19 @@ class BaseField {
   int cols;
   int rows;
   PVector[][] field;
+  // ADD 2D array to track Cell location in the field
+  //    to use when calculating a cells distance (and subsequent force vector from Mouse Location
+  PVector[][] cellLoc; // ADD THIS to track each cells location in the field
   PVector noiseVel;
   float noiseVelFloat;
   float zoff;
 
   BaseField(int res_, float noiseVel_, float noiseTime_) {
-    res   = res_;
-    cols  = width/res;
-    rows  = height/res;
-    field = new PVector[cols][rows];
+    res      = res_;
+    cols     = width/res;
+    rows     = height/res;
+    field    = new PVector[cols][rows];
+    cellLoc  = new PVector[cols][rows];
     noiseVel = new PVector(noiseVel_, noiseVel_, noiseTime_);
     noiseVelFloat = noiseVel_;
     zoff  = 0.0;
@@ -30,6 +34,7 @@ class BaseField {
     for (int i = 0; i < cols; i++) {
       for (int j = 0; j < rows; j++) {
         field[i][j] = new PVector(-1, 0);
+        cellLoc[i][j] = new PVector(i*res, j*res);
       }
     }
   }
@@ -47,6 +52,7 @@ class BaseField {
 
         // draw cell
         translate(res*i, res*j);
+        stroke(255/(i+1),0, 150);
         fill(255,100);
         rect(0, 0, res, res);
 
