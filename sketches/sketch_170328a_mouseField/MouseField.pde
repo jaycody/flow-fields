@@ -17,7 +17,12 @@ class MouseField extends NoiseField {
     for (int i = 0; i < cols; i++) {
       for (int j = 0; j < rows; j++) {
         PVector desired = PVector.sub(mouseLoc, cellLoc[i][j]);
-        desired.setMag(1);
+        //float d = dist(mouseLoc.x, mouseLoc.y, cellLoc[i][j].x, cellLoc[i][j].y);
+        //println(d);
+        float mapDist   = map(desired.mag(), 0, width*.5, 0, 1.5);
+        //println(desired.mag());
+        //float d = dist(
+        desired.setMag(mapDist);
         field[i][j] = desired;
         //field[i][j].add(0, -1);
         //field[i][j].add(0, random(-1,1));
@@ -25,7 +30,7 @@ class MouseField extends NoiseField {
         stroke(255/(i+1), 0, 0);
         fill(255-(255/(i+1)), 255/(i+1), 0);
         //ellipse(cellLoc[i][j].x, cellLoc[i][j].y, res, res);
-        //ellipse(mouseLoc.x, mouseLoc.y, res, res);
+        ellipse(mouseLoc.x, mouseLoc.y, res, res);
       }
     }
   }

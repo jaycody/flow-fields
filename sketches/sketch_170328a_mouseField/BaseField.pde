@@ -52,7 +52,6 @@ class BaseField {
 
         // draw cell
         translate(res*i, res*j);
-        stroke(255/(i+1),0, 150);
         fill(255,100);
         rect(0, 0, res, res);
 
