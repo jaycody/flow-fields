@@ -26,7 +26,7 @@ MouseField     mouseField;
 
 FlowParticle   flowParticle;
 FlowParticle[] particles;
-int totalParticles = 25000;
+int totalParticles = 35000;
 
 boolean showField = true;
 boolean testField = true;
@@ -34,10 +34,12 @@ FieldTester[] fieldtests;
 int totalTestObjects = 100;
 
 void setup() {
-  size(640, 480, P2D);
+  fullScreen(P2D,2);
+  //size(640, 480, P2D);
   //size(1024, 768, P2D);
   //smooth();
   //blendMode(ADD);
+  noCursor();
   
   refImages      = new PImage[2]; 
   refImages[0]   = loadImage("wavemotion.jpg");
