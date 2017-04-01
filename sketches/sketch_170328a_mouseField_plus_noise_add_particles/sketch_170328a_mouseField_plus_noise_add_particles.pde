@@ -2,7 +2,8 @@
  FlowField gongfu 
  
  NEXT:
- [ ] mouseField
+ [ ] add drawLine to particle between previous and current point.  see comment section in the particle FlowParticle class
+ [x] mouseField
  [ ] update ref image sizes to match sketch size (to simplify the code for now)
  [ ] vector angle mapped to brightness
  [x] BaseField class  - FlowField base class
@@ -26,7 +27,7 @@ MouseField     mouseField;
 
 FlowParticle   flowParticle;
 FlowParticle[] particles;
-int totalParticles = 35000;
+int totalParticles = 5000;
 
 boolean showField = true;
 boolean testField = true;
@@ -34,7 +35,8 @@ FieldTester[] fieldtests;
 int totalTestObjects = 100;
 
 void setup() {
-  fullScreen(P2D,2);
+  size(640, 480);
+  //fullScreen(P2D,2);
   //size(640, 480, P2D);
   //size(1024, 768, P2D);
   //smooth();

@@ -67,3 +67,53 @@ class Particle {
     }
   }
 }
+
+
+/*
+///////// FROM InkTouchOSC //////////
+
+  public Particle(float x,float y, float noiseZ) {
+    stepSize = random(MIN_STEP, MAX_STEP);
+
+    location = new PVector(x,y);
+    prevLocation = location.get();
+    acceleration = new PVector(0, 0);
+    velocity = new PVector(0, 0);
+    flowFieldLocation = new PVector(0, 0);
+    
+    // adds zNoise incrementally so doesn't start in same position
+    zNoise = noiseZ;
+  }
+
+
+  // resets particle with new origin and velocitys
+  public void reset(float x,float y,float noiseZ, float dx, float dy) {
+    stepSize = random(MIN_STEP, MAX_STEP);
+
+    location.x = prevLocation.x = x;
+    location.y = prevLocation.y = y;
+    acceleration.x = dx;//-2;
+    acceleration.y = dy;
+    life = 0;
+    
+    zNoise = noiseZ;
+    
+    int r = (int) map(x, 0, width, 0, 255);
+    int g = (int) map(y, 0, width, 0, 255);
+    int b = (int) map(x+y, 0, width+height, 0, 255);
+    clr = color(r,g,b);
+  } // 2-d render using processing P2D rendering context
+  // r,g,b,a are floats from 0..255
+  void render(float r, float g, float b, float a) {
+      // drawing coordinates
+//      float startX = (rearScreenProject ? width - (prevLocation.x-1) : (prevLocation.x-1)); 
+//      float endX   = (rearScreenProject ? width - (location.x-1)     : (location.x-1));
+      float startX = prevLocation.x;
+      float endX   = location.x;
+      float startY = prevLocation.y;
+      float endY   = location.y;
+      stroke(r, g, b, a);
+      line(startX, startY, endX, endY);
+  }
+  
+  */
