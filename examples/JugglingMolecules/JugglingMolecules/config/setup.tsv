@@ -1,0 +1,11 @@
+type	field	value
+int	setupWindowWidth	1280
+int	setupWindowHeight	960
+int	setupFPS	30
+int	setupNoiseSeed	26103
+int	setupOscInboundPort	8000
+int	setupOscOutboundPort	9000
+int	setupFlowFieldResolution	15
+int	kinectMinDepth	237
+int	kinectMaxDepth	870
+int	kinectAngle	0

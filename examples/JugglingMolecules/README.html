@@ -1,0 +1,521 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>README</title></head><body><h3 id="omicron-spirolight">OmiCron-SpiroLight</h3>
+<ul>
+<li>an interactive video installation designed for The Rhythm Society's EarthTones Retreat 2013.09.22</li>
+<li>the interface is a combination of gesture controls from dancers and knob turning from participants.  The podium sized OmiCron Interface will sit somewhere on the edge of the dance floor enticing users with its large knobs and glowing buttons.  Omicrons controls are mapped to the parameters of a spirograph-like pattern projected on a rear projection screen.  Dancers control the location of the pattern by way of the closest point in a 3D point cloud (ie the pattern will follow their hand if their hand contains the point closest to the Kinect sensor.  Dancers can also interact with a particle system whose behavior is controlled by a depth informed flow field.  Dancer's distance and velocity determine the behavior of the particles.</li>
+</ul>
+<h3 id="requirements">Requirements:</h3>
+<ul>
+<li><a href="http://www.flickr.com/photos/jaycody9/sets/72157632699562712/">OmiCron The Interface</a></li>
+<li>Kinect Depth Sensor</li>
+<li>Processing 2.0.3</li>
+<li>SimpleOpenNI 1.96</li>
+</ul>
+<h3 id="interactions">Interactions:**</h3>
+<ol>
+<li>Dancer with OmiCron Controller</li>
+<li>Dancer with SpiroLight</li>
+<li>Dancer with Particles</li>
+<li>Particles with SpiroLight<ul>
+<li>Autonomous Vehicles AVOID OR PURSUE SpiroLight (Omicron Control)</li>
+<li>When emerging from and avoiding spiroLight, particles steer toward Dancer</li>
+<li>When emerging from and avoiding dancer, particles steer toward Spirolight.  When within range of outter most arm, particles accelerate like additive flashes of light and disappear inside spirolight.  Born again from Dancer's movement (optical flow)</li>
+</ul>
+</li>
+<li>OmiCron with SpiroLight</li>
+<li>OmiCron with Particles</li>
+</ol>
+<h3 id="next-steps">Next Steps:</h3>
+<ul>
+<li>[] Setup OmiCron:<ul>
+<li>[] Run Calibration with Processing.  Systems Check</li>
+<li>[] Tighten Bolts</li>
+<li>[] Study RotaDeva code for how inputs were passed around.</li>
+<li>[] Write the code that treats OmiCron as if it were a variety of forces.  </li>
+<li><code>omiCron.KnobLeftRed(); // returns a PVector reading for Magnitude, direction, velocity, etc</code></li>
+<li><code>omiCron.lookup(KnobFoo); // returns an array of PVectors?????</code></li>
+<li>[] study the code and see how Owen did it.</li>
+<li>[] then save this as it's own Tool for use anytime.</li>
+<li>[] make a version for SpiroLight</li>
+</ul>
+</li>
+<li>[] rewrite the centerPiece_SpiroLight to include OmiCron<ul>
+<li>[] scale model using foam core or construction paper??</li>
+<li>[] get all the inputs with stationary SpiroLight first Tiers 1-3</li>
+</ul>
+</li>
+</ul>
+<h3 id="omicron-map-controls-to-spirolight">OmiCron: Map Controls to SpiroLight:**</h3>
+<ul>
+<li>[] Button shuffles ratios for specified tier<ul>
+<li>where on the circle is arm connected? (make that a perlin noise function where button down progresses through perlin noise for all variables.</li>
+</ul>
+</li>
+<li>[] First tier Red knobs control overall size of spiroLight, mass, and steering ability toward target.  Mass gets bigger, slower it moves, the larger the circle, the larger the entire spiroLight  (as opposed to following closest point, which changes the size of spiroLight because of perspective being further away, but does not change the mass or the periods)</li>
+<li>[] Knobs control Magnitude of all the vectors, while buttons control location within each variables range</li>
+<li>[] Snap Button = Reverse Emitter Location from Tier 3 to Dancer.<ul>
+<li>when Emitter Origin is in SpiroLight, particles flock to Dancer</li>
+<li>Particles follow path along edges up dancer and out of spirolight</li>
+</ul>
+</li>
+<li>[] Tier 1 = Red, Tier 2 = Green, Tier 3 = Blue</li>
+<li>[] Each of the 3 omiCron buttons will change ratios (angular velocities, magnitude) for that color<ul>
+<li>eg Green Line From Tier 1 to Tier 2, and Green Line from Tier 2 to Tier 3 are:  <ul>
+<li>1:1 in length, 1:1 in angular velocity, and are IN PHASE </li>
+<li>1:2 in length, 1:-2 in angular velocity, and are out of phase by 90degrees</li>
+<li>1:sqrt2 in length, 1:1.618 in angular velocity, and are out of phase by 180</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[] Knobs: Red(Left and Right) Green(L,R), Blue(L,R) control the rotational velocity and distance to next teir.</li>
+<li>[] Ohmite Knob controls the parameters of the flow field (somehow) and/or z-axis rotation</li>
+<li>[] Add remainder of tier 2 and 3</li>
+<li><strong>OmiCron Structure:</strong><ul>
+<li>[] Add extra lights to the bottom of OmiCron (since the device WILL be in an open field)<ul>
+<li>[] use a second Arduino??  Yes.</li>
+</ul>
+</li>
+<li>[] Add Handles</li>
+<li>[] Bring extra batteries</li>
+<li>[] bring usb mouse and keyboard just in case</li>
+<li>[] bring Blue Tooth</li>
+</ul>
+</li>
+</ul>
+<h3 id="spirolight">SpiroLight:</h3>
+<ul>
+<li><strong>SpiroLight Forces:</strong><ul>
+<li>AstralLines (rotating arms):<ul>
+<li>arm length mapped to Velocity's Magnitude such that arms stretch when accelerating and shrink when decelerating (or vice versa).</li>
+<li>Perlin Noise the mapping of acceleration to arm length such that perlin noise wanders along a continuum of MaxSpeed = MaxLength AND MaxSpeed = Min Length </li>
+<li>Arm Rotation to Perlin Noise</li>
+<li>Add the SCALE function to simulate 3D</li>
+<li>Arm pivot point on circle wanders</li>
+</ul>
+</li>
+<li>Tier 1 Location Vectors have 4 control modes: (4 types of Forces that act upon primary location vector)<ol>
+<li>TEST MODE:  Follow Mouse (ie sub(location, mouse))</li>
+<li>DANCER MODE:  <ul>
+<li>Follow/ PursueClosest Point in Point Cloud (controlled by dancer)</li>
+<li>Evade closest point Dancer</li>
+</ul>
+</li>
+<li>NULL USER MODE:  Perlin Noise (which can be used to inform all the arms and rotations)</li>
+<li>OMICRON ONLY MODE: (or FP-13 Mode) or Touch OSC:  No Kinect Attached, no dancer.  Forces mapped to RedKnob Left and Right for (x,y)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>SpiroLight with FlowField.</strong>  </p>
+<ul>
+<li>Instead of constant angular velocity, SpiroLight joints can respond to the Flow Field with their own steering force.  The joints are vehicles that check in a ask, 'does the flow field bellow have information for me?  If not, then keep steady pace, otherwise, use flow field as desired velocity'.  Everytime spirolight sweeps over the dancer, the movements will adjust.  Or the colors will change to show the outline of the body.  If assign color variation to optical flow and sillouette, then the resulting blendMode(ADD) would be sufficient to change all the underlying pixels, effectively showing the dancers body.</li>
+</ul>
+</li>
+<li>
+<p><strong>SpiroLight Parameters and Controls:</strong></p>
+<ul>
+<li>
+<p>Inner sphere of 3D Hypotrochoid:</p>
+<ul>
+<li>diameter -&gt; User-N's distance from Kinect </li>
+<li>velocity -&gt; informed by velocity, location, and gravitational pull (determined by mass (from diameter) of User-N's center of gravity<ul>
+<li>use Center of Gravity velocity to inform direction and speed of ball rolling inside of sphere of a 3D Hypotrochoid</li>
+</ul>
+</li>
+<li>location of traced point in center sphere:<ul>
+<li>informed by Omicron controls OR</li>
+<li>set center of gravity to be an xyz point inside a ball.</li>
+</ul>
+</li>
+<li>color and weight of traced point -&gt; Omicron</li>
+</ul>
+</li>
+<li>
+<p>Outer Sphere of 3D Hypotrochoid:</p>
+<ul>
+<li>diameter -&gt; distance between User-N's center of gravity and body part furthest away from User-N's center of gravity</li>
+<li>location -&gt; follows User-N</li>
+</ul>
+</li>
+<li>
+<p>Parameter Options: </p>
+<ul>
+<li>map the traced point to the corner of an Emblem (Snaps image) such that each of 3 users control one corner of an image with their individually controlled  nested sphere. </li>
+<li>Make each User's center of gravity a single cusp in an n-cusp hypocycloid.<ul>
+<li>http://demonstrations.wolfram.com/EpicycloidsFromAnEnvelopeOfLines/</li>
+</ul>
+</li>
+<li>Spirolight parameters effected by the presence of other Spirolights; creates interweaving patterns.  </li>
+<li>line thickness controlled by Kinect depth info</li>
+<li>Traced line is occluded when it passes behind the User!!! user appears to be inside the Spirolight. </li>
+<li>If user occludes the animation based on depth, then the outline created by User's body may br enough to depict the human form in negative space. Thus, no need for extra pixels. </li>
+<li>Each User gets their own Spirolight (up to 3)</li>
+<li>Create a 3-cusp epicycloid that remains 3-cusp while the distance between the cusps change (i.e., each cusp is the center of a moving body).  What other variables would have to change?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Spirograph Definitions:</strong></p>
+<ul>
+<li><strong>Hypocycloids:</strong><ul>
+<li>http://mathworld.wolfram.com/Hypocycloid.html</li>
+<li>Coin inside a ring; tracing a point on circumference of coin</li>
+<li>An n-cusped hypocycloid has radiusA / radiusB = n.<ul>
+<li>Thus, a 5 pointed star has is a hypocycloid whose ring's radius is 5x the radius of the coin inside.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hypotrochoids:</strong><ul>
+<li>http://mathworld.wolfram.com/Hypotrochoid.html</li>
+<li>Coin inside a ring; tracing a point either inside or outside the perimeter of the coin</li>
+</ul>
+</li>
+<li><strong>Epicycloids:</strong><ul>
+<li>http://mathworld.wolfram.com/Epicycloid.html</li>
+<li>Coin outside a ring; tracing a point on circumference of coin</li>
+</ul>
+</li>
+<li><strong>Epitrochoids:</strong><ul>
+<li>http://mathworld.wolfram.com/Epitrochoid.html</li>
+<li>Coin outside of ring; tracing a point either inside or outside the perimeter of coin</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="spirolight-dancer">SpiroLight + Dancer:</h3>
+<ul>
+<li><strong>Specific Arms Always remain in contact with the DANCER and EDGE DETECT PATH FOLLOW.</strong><br />
+        - <strong>arrives and path follows along the edge of dancer's body with one of it's arms (or 2)!!</strong>  The SpiroLight follows the dancer and when it arrives, it's arms lock on to the edges and path follow.  Could cover and encircle the dancer like an octopus.  OR it grows NEW arms that remain in constant contact with user as the rest of the SpiroLight floats around.  Instead of harmonic monition, the arm follows the outline of the user.  see PATHFOLLOWING using the DOT PRODUCT
+        - Some parts of the SpiroLight seek the dancer and some parts evade the dancer, so the thing is constantly investigating AND keeping it's distance.  If the Tier 1 Location Vector brings spiro closer to dancer, then arms that are repelled with flock together and move away while arms that are attracted will get closer.
+            - AND the closer the arm, the greater the connetion, the brighter.
+            - Whichever arm is path following along body will have perlin noise generated organic branching.
+        - AND Particle System coming from dancer ALWAYS remains in contact with spiroLight
+        - where spiroLight is attracted to some point in the flow field that also guides the particles coming from Dancer<ul>
+<li><strong>Dancer's Movement Also Affects Size and Brightness of SpiroLight</strong><ul>
+<li>Use the Frame Differencing already used to inform the particle system</li>
+<li>The same threshold velocity which triggers particles also brightens and expands the SpiroLight</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="kinect-dancer">Kinect + Dancer:</h3>
+<ul>
+<li>
+<p><strong>Optical Flow:</strong></p>
+<ul>
+<li>Using Optical Flow:<ul>
+<li>with change in depth, not just change in frame!!!  Frame differencing in the z-axis!!**  </li>
+<li>Frame AND GreyScale Differencing for Depth Changes that are not along the x,y, but are instead, back and forth from the sensor.</li>
+<li>[] RealTime 3D Optical Flow on a point cloud (color = point velocity; or color denotes movement direction and alpha denotes point velocity)</li>
+<li>[] If movement &gt; threshold, calc magnitude and orientation of gradient, </li>
+<li>If movement &gt; threshold, generate particle whose color equals the color of reference image and whose velocity is informed by the flow field.</li>
+</ul>
+</li>
+<li>Examples of Optical FLow:<ul>
+<li><a href="http://www.youtube.com/watch?v=2xs0fcmgKC0">Optical Flow Field + FLocking + Reference Image  |  YouTube</a></li>
+<li><a href="http://www.youtube.com/watch?v=Edl6aWL1pjo">Optical Flow Field - handForce affects an object's velocity  |  YouTube</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Point Cloud:</strong></p>
+<ul>
+<li>We may keep the 2D world by pulling the 3D info from Kinect but projeting into 2D world.  Z-axis can convert to size instead of distance. </li>
+<li>[] Make closest point in point cloud the desired target such that: </li>
+<li>[] Create a Vector Field as function of depth</li>
+<li>[] Build Library for Depth related Forces</li>
+<li>[] In the abscence of movement (frame differencing &lt; threshold), then SpiroLight moves towards Dancer (b/c it seeks dancer's closest point to sensor)</li>
+<li>[] particles flock / swarm together toward movement</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><code>steering force = desired velocity - current velocity</code></p>
+</blockquote>
+<h3 id="flowfield-calculation">FlowField Calculation:</h3>
+<ul>
+<li>
+<p>accumulating forces from a variety of causes:  spiroLight-Field, dancer-Field, noise-Field</p>
+<ol>
+<li>SpiroLight's Affect on the Flow Field:<ul>
+<li>affects the flowfield like iron flakes in a magnetic field.  </li>
+<li>Particles located further away follow a longer circuitous route. </li>
+<li>Vector Magnitude along the path to SpiroLight scales with vectors proximity to Spirolight (accelerates as it approaches)</li>
+</ul>
+</li>
+<li>Dancer's affect on the FlowField:<ul>
+<li>Dancers generate their own FlowField inside the Global Field.  Once calculated, the dancer's vector field is (ADDED?? SUBTRACTED?) to/from the SpiroLight Field </li>
+<li>Flow Vectors within the boundary of the dancer's body align themselves with the magnitude and orientation of the body's depth gradients (pointing uphill)</li>
+<li>Dancer's Flow Vectors</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>[] flow field points to spirolight, unless located on dancer within min-max range</p>
+</li>
+<li>[] if dancer in field, then vector mag is depth and direction points to the edge.  once at the edge, particle moves toward spirolight according to background flow field</li>
+<li>[] flow field vectors increase in magnitude as they approach spirolight such that particles accelerate toward the light</li>
+<li>[] particle steering force and maxspeed change relative to their proximity to spirolight</li>
+</ul>
+<h3 id="feedback-loop-as-pgraphic-layer">Feedback Loop as PGraphic Layer</h3>
+<ul>
+<li>Frame Difference Seeds Feedback Loop<ul>
+<li>create new Pgraphic to hold only the frame differencing information such that currentPgraphic - previousPGraphic = differencePGraphic.  Then get() pixels from this layer and updatePixels with itself, creating a feedback loop</li>
+<li>assign noise as velocity of Feedback Layer</li>
+</ul>
+</li>
+<li>[] Create an array of PImages, each containing the previous frame to create a 5 sec sample of dancer + depth.  then rotate along the z-axis (see La Danse Kinect on vimeo).</li>
+<li>
+<p>[] How will CenterPiece-SpiroLight interact with the dancer's body?</p>
+<ul>
+<li>blendMode(ADD)</li>
+</ul>
+</li>
+<li>
+<p>[] dancer is mask for reference image</p>
+</li>
+<li>
+<p>[] upload diagrams</p>
+</li>
+<li>[] PNGs with Alpha Layer for particles AND for ellipses of spiroLight.</li>
+<li><strong>Kinect Ideas</strong><ul>
+<li>[] Kinect:  Users Center of Mass linked to spiroCenter Location</li>
+<li>[] Kinect: User's horizontal distance informs the spiroCenter's gravitational constant</li>
+</ul>
+</li>
+</ul>
+<h3 id="code">Code:</h3>
+<ul>
+<li>
+<p>Use createGraphics() to return a PGraphics object.  Unlike the main drawing surface, this surface retains transparency!  That means SpiroLight can fade without fading the particle system</p>
+</li>
+<li>
+<p><strong>ToDo(Owen):</strong></p>
+<ul>
+<li>[] Particle System!  particle.lookup(PVector particleLocation); // will return a PVector force derived from the Flow Field state at that particle's location.  USE THE FORCE to inform acceleration to inform velocity to inform location.  </li>
+</ul>
+</li>
+<li>
+<p><strong>ToDo(Installation):</strong></p>
+</li>
+</ul>
+<h3 id="code-snippets">Code Snippets:</h3>
+<p>```spiroLight.applyForce(force);</p>
+<pre><code>
+- // with zero net force, object remains still or at constant velocity.  spiroLight object receives the force and hands it to the object's method applyForce(PVector force) where the force gets accumulated by acceleration with acceleration.add(force) (such that force informs acceleration, acceleration informs velocity, velocity informs location)
+
+- accumulate the net force (but only for any specific frame).  Update should end with acc.mag(0); to clear the forces that the acceleration vector has accumulated.
+
+</code></pre>
+
+<p>void applyForce (PVector force) {
+    PVector newForceBasedOnObjectMass = PVector.div(force, mass); 
+                // b/c more force required to move larger mass.
+    acceleration.add(force);
+}
+void update() {
+velocity.add(acceleration);
+location.add(velocity);
+}</p>
+<pre><code>
+- A simpler For-Loop Syntax for an Array:
+``` for (SpiroLight spiro : Spiros){}  // for every SpiroLight spiro in the array Spiros```
+
+- Force = Mass X Acceleration
+- Acceleration = Force/Mass
+
+- What is the NORMAL force?  Always = 1 (in our processing world)
+
+- Friction Algorithm (what is mag and direction of friction (always against the direction of velocity)):  Friction Force = -1 X (unit direction velocity vector) X the NORMAL force X the coefficient of friction
+
+</code></pre>
+
+<p>PVector friction = velocity.get();  // get a copy of velocity vector
+friction.normalize();  // normalize the copied velocity vector to get its direction
+friction.mult(-1);   // now take the direction and put it in the opposite direction (because friction acts AGAINST the direction of velocity)
+float coefficientOfFriction = .001;  // set the strength of the friction
+friction.mult(coefficientOfFriction)  // the direction of friction and multiply by the magnitude set by the kind of substance causing the friction (the Coefficient of Friction)</p>
+<pre><code>
+- **Polar to Cartesian Cordinates**
+    - SOHCAHTOA
+    - y = radius * sin(theta)
+    - x = radius * cos(theta)
+
+- The following statement will create a user defined function that will create Spirograph patterns:
+
+</code></pre>
+
+<p>spirograph = function (v_R, v_r, v_p, v_nRotations, s_color)
+{
+    t = vectorin(0, 0.05, 2 * pi * v_nRotations);:
+    x = (v_R + v_r) * cos(t) + v_p * cos((v_R + v_r) * t / v_r);:
+    y = (v_R + v_r)* sin(t) + v_p * sin((v_R + v_r) * t / v_r);:
+    plot(x, y, s_color):
+}
+```
+    - To see this function in action, execute the following statement:</p>
+<blockquote>
+<p><code>spirograph(53, -29, 40, 30, gray)</code></p>
+</blockquote>
+<h3 id="diagrams">Diagrams:</h3>
+<h3 id="examples">Examples:</h3>
+<ul>
+<li><a href="http://www.benjoffe.com/code/toys/spirograph">Spirograph Web App worth checking out</a></li>
+<li><a href="https://vimeo.com/7757058">Epicycles On Epicycles, Cable Knots on Cable Knots | vimeo</a></li>
+<li><a href="https://vimeo.com/2228788">The 3D Spirograph Project | vimeo</a><ul>
+<li>The visual math of epicycloids. Nested rotational orbits produce emergent spiral designs in 3D.</li>
+</ul>
+</li>
+<li><a href="https://vimeo.com/59028636">Vectors: Acceleration Towards the Mouse (Nature of Code) - Shiffman</a></li>
+<li><a href="http://matheminutes.blogspot.com/2012/01/if-spirograph-were-3d.html">If Spirographs were 3D</a></li>
+<li><a href="http://maxwelldemon.com/2010/01/14/spirographs-and-the-third-dimension/">Spirographs and the 3rd Dimensions | 3D printing</a></li>
+<li><a href="http://wordsmith.org/~anu/java/spirograph.html#display">Spirograph | Web App</a></li>
+<li><a href="http://www.openprocessing.org/browse/?viewBy=tags&amp;tag=spirograph">Spirograph in Code | OpenProcessing website</a></li>
+<li><a href="http://samjbrenner.com/notes/processing-spirograph/">Spirographs Explained | Sam Brenner from ITP</a></li>
+<li><a href="http://dev.horemag.net/2008/03/03/spirograph-with-processing/">Simple Spirograph | Web App from Aquilax's Dev Blog</a></li>
+<li><a href="http://mathiversity.com/Spirograph">Mathiversity | Spirograph Web App</a></li>
+<li><a href="http://www.eddaardvark.co.uk/nc/sprog/index.html#x">Spirograph Web App</a></li>
+</ul>
+<h3 id="future">Future:</h3>
+<ul>
+<li>[] toxilib</li>
+<li><a href="http://princemio.net/portfolio/flow-1-kinect-projector-dance/">Flow no.1 The Kinect Projector Dance</a><ul>
+<li>Software Used for the project:<ul>
+<li>ofxOpenNI – created by gameoverhack – openNi wrapper to read captrued data from the kinect camera in realtime.</li>
+<li>ofxCV – created by Kyle McDonald – fast openCV wrapper.</li>
+<li>ofxFluidSolver – created by Memo Atken. After Years, it is still one of my favourite calculation models to illustrate continous flow of a dancer and graphics.</li>
+<li>ofxUI – created by rezaali – having worked a lot in processing, i completly fell in love with this GUI library as it speeds up my tweaking processes. Its easy to use and fast to bind to variables.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></body></html>

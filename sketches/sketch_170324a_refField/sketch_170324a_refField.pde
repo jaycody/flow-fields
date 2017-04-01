@@ -2,6 +2,7 @@
  FlowField gongfu 
  
  NEXT:
+ [ ] RefImageField from ref image brightness
  [x] BaseField class  - FlowField base class
  [x] RandomField extends BaseField
  [x] NoiseField extends BaseField
@@ -19,14 +20,17 @@
 ReferenceField referencefield;
 PImage refImage;
 
-boolean showField = true;
+boolean showField = false;
 boolean testField = true;
 FieldTester[] fieldtests;
-int totalTestObjects = 100;
+int totalTestObjects = 500;
 
 void setup() {
-  size(1024, 768);
+  fullScreen(1);
+  //size(1920, 1080);
+  //size(1024, 768);
   smooth();
+  background(0);
 
   //refImage       = loadImage("wavemotion.jpg");
   refImage       = loadImage("kamehameha.jpg");
@@ -36,13 +40,16 @@ void setup() {
 }
 
 void draw() {
-  background(255);
+  //background(255);
 
   if (testField) {
     referencefield.run(fieldtests);
   } else {
     referencefield.run();
   }
+  
+  fill(0,10);
+  rect(0,0,width,height);
 }
 
 

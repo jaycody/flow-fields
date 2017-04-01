@@ -1,0 +1,76 @@
+---------------------------------------------------------
+-------      C U R R E N T     C O N F I G        -------
+---------------------------------------------------------
+-  showParticles                : true
+-  showFlowLines                : false
+-  showDepthImage               : false
+-  showDepthPixels              : false
+-  showSettings                 : false
+-  windowBgColor                : rgba(0,139,213,50)
+-  windowOverlayAlpha           : 20
+-  flowfieldResolution          : 15
+-  flowfieldPredictionTime      : 0.5
+-  flowfieldMinVelocity         : 20
+-  flowfieldRegularization      : 1.0E8
+-  flowfieldSmoothing           : 0.05
+-  noiseStrength                : 100.0
+-  noiseScale                   : 100.0
+-  particleViscocity            : 0.995
+-  particleForceMultiplier      : 50.0
+-  particleAccelerationFriction : 0.7511973
+-  particleAccelerationLimiter  : 0.35
+-  particleNoiseVelocity        : 0.0080
+-  particleColorScheme          : 1
+-  particleColor                : rgba(255,255,255,255)
+-  particleAlpha                : 50
+-  particleMaxCount             : 30000
+-  particleGenerateRate         : 10
+-  particleGenerateSpread       : 20.0
+-  particleMinStepSize          : 4
+-  particleMaxStepSize          : 8
+-  particleLifetime             : 400
+-  flowLineColor                : rgba(255,0,0,30)
+-  flowLineAlpha                : 30
+-  depthImageColor              : rgba(255,0,0,255)
+-  depthImageAlpha              : 30
+---------------------------------------------------------
+
+
+>> sending /showParticles 1.0
+>> sending /showFlowLines 0.0
+>> sending /showDepthImage 0.0
+>> sending /showDepthPixels 0.0
+>> sending /showSettings 0.0
+>> sending /windowBgColor 0.0
+>> sending /windowOverlayAlpha 0.078431375
+>> sending /flowfieldResolution 0.2857143
+>> sending /flowfieldPredictionTime 0.21052632
+>> sending /flowfieldMinVelocity 0.3877551
+>> sending /flowfieldRegularization 0.01
+>> sending /flowfieldSmoothing 0.05
+>> sending /noise 0.33110368 0.24812031
+>> sending /particleViscocity 0.995
+>> sending /particleForceMultiplier 0.1638796
+>> sending /particleAccelerationFriction 0.7517007
+>> sending /particleAccelerationLimiter 0.3496994
+>> sending /particleNoiseVelocity 0.010169493
+>> sending /particleColorScheme-0 0
+>> sending /particleColorScheme-1 1
+>> sending /particleColorScheme-2 0
+>> sending /particleColorScheme-3 0
+>> sending /particleHue 0.0
+>> sending /particleAlpha 0.19607843
+>> sending /particleMaxCount 1.0
+>> sending /particleGenerate 0.04522613 0.3877551
+>> sending /particleGenerateSpread 0.3877551
+>> sending /particleMinStepSize 0.11111111
+>> sending /particleMaxStepSize 0.33333334
+>> sending /particleLifetime 0.36842105
+>> sending /flowLineHue 0.0
+>> sending /flowLineAlpha 0.11764706
+>> sending /depthImageHue 0.0
+>> sending /depthImageAlpha 0.11764706
+>> sending /depthImageBlendMode-0 1
+>> sending /depthImageBlendMode-1 0
+>> sending /depthImageBlendMode-2 0
+>> sending /depthImageBlendMode-3 0
