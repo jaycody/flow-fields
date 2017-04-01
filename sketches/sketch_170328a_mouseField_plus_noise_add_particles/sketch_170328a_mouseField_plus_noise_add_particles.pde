@@ -2,13 +2,9 @@
  FlowField gongfu 
  
  NEXT:
-<<<<<<< HEAD
- [ ] RefImageField from ref image brightness
-=======
  [ ] mouseField
  [ ] update ref image sizes to match sketch size (to simplify the code for now)
  [ ] vector angle mapped to brightness
->>>>>>> 224ddd3a8cb6bfbe17957d40ee13989a091d699c
  [x] BaseField class  - FlowField base class
  [x] RandomField extends BaseField
  [x] NoiseField extends BaseField
@@ -28,26 +24,22 @@ PImage[] refImages;
 
 MouseField     mouseField;
 
-boolean showField = false;
+FlowParticle   flowParticle;
+FlowParticle[] particles;
+int totalParticles = 35000;
+
+boolean showField = true;
 boolean testField = true;
 FieldTester[] fieldtests;
-int totalTestObjects = 500;
+int totalTestObjects = 100;
 
 void setup() {
-<<<<<<< HEAD
-  fullScreen(1);
-  //size(1920, 1080);
-  //size(1024, 768);
-  smooth();
-  background(0);
-
-  //refImage       = loadImage("wavemotion.jpg");
-  refImage       = loadImage("kamehameha.jpg");
-  referencefield = new ReferenceField(64, 0.09, 0.004, refImage);  // resolution, noiseVel, noiseTime
-
-=======
-  size(1024, 768, P2D);
-  smooth();
+  fullScreen(P2D,2);
+  //size(640, 480, P2D);
+  //size(1024, 768, P2D);
+  //smooth();
+  //blendMode(ADD);
+  noCursor();
   
   refImages      = new PImage[2]; 
   refImages[0]   = loadImage("wavemotion.jpg");
@@ -55,33 +47,41 @@ void setup() {
   
   // args = resolution, noiseVel, noiseTime, array of ref images
   referencefield = new ReferenceField(64, 0.09, 0.004, refImages); 
-  mouseField     = new MouseField(128, 0.2, 0.01);
+  mouseField     = new MouseField(32, 0.09, 0.003);
+  //PVector tempLoc = new PVector(random(width), random(height));
+  flowParticle = new FlowParticle(new PVector(random(width), random(height)), 9, .1);
   
->>>>>>> 224ddd3a8cb6bfbe17957d40ee13989a091d699c
+  particles = new FlowParticle[totalParticles];
+  for (int i = 0; i < totalParticles; i++){
+    particles[i] = new FlowParticle(new PVector(random(width), random(height)), random(3,9), random(.05, .1));
+  }
+  
   setup_tests_and_instructions();
 }
 
 void draw() {
-  //background(255);
-
-<<<<<<< HEAD
-  if (testField) {
-    referencefield.run(fieldtests);
-  } else {
-    referencefield.run();
-  }
-  
-  fill(0,10);
-  rect(0,0,width,height);
-=======
+  background(0);
+  // fill(0,20);
+  //rect(0,0,width,height);
   
     //referencefield.run(fieldtests);
     //referencefield.run();
   
+  mouseField.run();
   
-  mouseField.run(fieldtests);
+  //flowParticle.follow(mouseField);
+  //flowParticle.run();
   
->>>>>>> 224ddd3a8cb6bfbe17957d40ee13989a091d699c
+  for (int i = 0; i < particles.length; i ++){
+   particles[i].follow(mouseField);
+   //blendMode(ADD);
+   particles[i].run();
+  }
+  
+  //fill(0,10);
+  //rect(0,0,width,height);
+  fill(255);
+  //ellipse(mouseX, mouseY, 20,20);
 }
 
 
